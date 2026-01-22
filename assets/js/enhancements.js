@@ -356,28 +356,43 @@
     `;
     document.head.appendChild(style);
 
-    // Event listeners
-    const closeBtn = document.getElementById('closeQuoteModal');
-    const quoteForm = document.getElementById('quoteForm');
-    const quoteSuccess = document.getElementById('quoteSuccess');
+    // Event listeners - use querySelector on modal to ensure we get the right element
+    const closeBtn = modal.querySelector('#closeQuoteModal');
+    const quoteForm = modal.querySelector('#quoteForm');
+    const quoteSuccess = modal.querySelector('#quoteSuccess');
 
     // Close modal and go to home page
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-      window.location.href = 'index.html';
-    });
+    if (closeBtn) {
+      closeBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        modal.classList.remove('active');
+        // Small delay to ensure modal animation completes
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 100);
+      });
+    }
+    
+    // Click outside modal closes and goes to home
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
+        e.preventDefault();
         modal.classList.remove('active');
-        window.location.href = 'index.html';
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 100);
       }
     });
 
     // Escape key closes modal and goes to home page
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && modal.classList.contains('active')) {
+        e.preventDefault();
         modal.classList.remove('active');
-        window.location.href = 'index.html';
+        setTimeout(() => {
+          window.location.href = 'index.html';
+        }, 100);
       }
     });
 
