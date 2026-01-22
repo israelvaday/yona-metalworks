@@ -49,6 +49,10 @@
         from { transform: translateY(100%); }
         to { transform: translateY(0); }
       }
+      @keyframes slideDown {
+        from { transform: translateY(0); opacity: 1; }
+        to { transform: translateY(100%); opacity: 0; }
+      }
       #cookie-consent .cookie-content {
         max-width: 1200px;
         margin: 0 auto;
