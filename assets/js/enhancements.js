@@ -361,15 +361,24 @@
     const quoteForm = document.getElementById('quoteForm');
     const quoteSuccess = document.getElementById('quoteSuccess');
 
-    // Close modal
-    closeBtn.addEventListener('click', () => modal.classList.remove('active'));
+    // Close modal and go to home page
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+      window.location.href = 'index.html';
+    });
     modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
+      if (e.target === modal) {
+        modal.classList.remove('active');
+        window.location.href = 'index.html';
+      }
     });
 
-    // Escape key closes modal
+    // Escape key closes modal and goes to home page
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal.classList.remove('active');
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        window.location.href = 'index.html';
+      }
     });
 
     // Form submission
