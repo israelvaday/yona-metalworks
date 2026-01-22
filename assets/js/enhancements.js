@@ -187,8 +187,10 @@
         100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
       }
       @media (max-width: 768px) {
-        #whatsapp-float { bottom: 80px; left: 15px; }
+        #whatsapp-float { bottom: 20px; right: 15px; left: auto; }
         #whatsapp-float .whatsapp-btn { width: 55px; height: 55px; font-size: 26px; }
+        #whatsapp-float .whatsapp-tooltip { right: auto; left: 70px; }
+        #whatsapp-float .whatsapp-btn:hover .whatsapp-tooltip { right: auto; left: 65px; }
       }
     `;
     document.head.appendChild(style);

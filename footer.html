@@ -51,7 +51,12 @@
   </div>
 </footer>
 
-<!-- Sticky Call Button - Right Side -->
+<!-- Sticky Call Button - Right Side (hidden on mobile) -->
+<style>
+  @media (max-width: 768px) {
+    .sticky-call-button { display: none !important; }
+  }
+</style>
 <div class="sticky-call-button" style="position: fixed !important; right: 0 !important; top: 50% !important; transform: translateY(-50%) !important; z-index: 99999 !important;">
   <a href="tel:0542666568" class="call-btn" style="display: flex; align-items: center; justify-content: center; width: 50px; height: 180px; background: linear-gradient(180deg, #ffb400 0%, #ff8c00 100%); color: white; text-decoration: none; font-size: 16px; font-weight: bold; text-align: center; line-height: 1.4; border-radius: 12px 0 0 12px; box-shadow: -3px 3px 15px rgba(0, 0, 0, 0.4); writing-mode: vertical-rl; text-orientation: mixed; padding: 20px 8px; letter-spacing: 2px;">התקשרו עכשיו</a>
 </div> 
