@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Test files
+test-results/
+test-screenshot.png
+tests/screenshots/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.log
+*.tmp
+
+# Large video files
+פרוייקטים/וידאו/*.mp4

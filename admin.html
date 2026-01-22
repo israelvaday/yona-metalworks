@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ניהול פניות - מסגריית יונה</title>
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body { background: #f5f5f5; font-family: 'Segoe UI', Tahoma, sans-serif; }
+    .admin-container { max-width: 1200px; margin: 30px auto; padding: 0 20px; }
+    .admin-header { background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); color: #fff; padding: 30px; border-radius: 15px; margin-bottom: 30px; }
+    .admin-header h1 { margin: 0; display: flex; align-items: center; gap: 15px; }
+    .admin-header h1 i { color: #ff8c00; }
+    .card { border: none; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    .card-header { background: #fff; border-bottom: 2px solid #ff8c00; font-weight: 700; font-size: 1.1rem; }
+    .card-header i { color: #ff8c00; margin-left: 10px; }
+    .table th { background: #f8f9fa; }
+    .badge-sent { background: #28a745; }
+    .badge-pending { background: #ffc107; color: #000; }
+    .btn-clear { background: #dc3545; color: #fff; }
+    .btn-export { background: #ff8c00; color: #fff; }
+    .empty-state { text-align: center; padding: 50px; color: #666; }
+    .empty-state i { font-size: 60px; color: #ddd; margin-bottom: 20px; }
+    .stats-box { background: #fff; border-radius: 15px; padding: 25px; text-align: center; box-shadow: 0 5px 20px rgba(0,0,0,0.1); }
+    .stats-box i { font-size: 40px; color: #ff8c00; margin-bottom: 10px; }
+    .stats-box h3 { font-size: 2.5rem; color: #1a1a1a; margin-bottom: 5px; }
+    .stats-box p { color: #666; margin: 0; }
+  </style>
+</head>
+<body>
+  <div class="admin-container">
+    <div class="admin-header">
+      <h1><i class="bi bi-gear-wide-connected"></i> לוח בקרה - ניהול פניות</h1>
+      <p class="mt-2 mb-0">צפייה בפניות שהתקבלו מהאתר</p>
+    </div>
+
+    <!-- Stats -->
+    <div class="row mb-4">
+      <div class="col-md-4">
+        <div class="stats-box">
+          <i class="bi bi-file-earmark-text"></i>
+          <h3 id="totalQuotes">0</h3>
+          <p>בקשות הצעת מחיר</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-box">
+          <i class="bi bi-envelope"></i>
+          <h3 id="totalNewsletters">0</h3>
+          <p>נרשמים לניוזלטר</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stats-box">
+          <i class="bi bi-check-circle"></i>
+          <h3 id="totalSent">0</h3>
+          <p>נשלחו בהצלחה</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quote Requests -->
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-file-earmark-text"></i> בקשות הצעת מחיר</span>
+        <div>
+          <button class="btn btn-sm btn-export" onclick="exportQuotes()"><i class="bi bi-download"></i> ייצא</button>
+          <button class="btn btn-sm btn-clear" onclick="clearQuotes()"><i class="bi bi-trash"></i> נקה</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="quotesTable"></div>
+      </div>
+    </div>
+
+    <!-- Newsletter Subscribers -->
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">
+        <span><i class="bi bi-envelope-paper"></i> נרשמים לניוזלטר</span>
+        <div>
+          <button class="btn btn-sm btn-export" onclick="exportEmails()"><i class="bi bi-download"></i> ייצא</button>
+          <button class="btn btn-sm btn-clear" onclick="clearEmails()"><i class="bi bi-trash"></i> נקה</button>
+        </div>
+      </div>
+      <div class="card-body">
+        <div id="emailsTable"></div>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="alert alert-info mt-4">
+      <i class="bi bi-info-circle"></i>
+      <strong>שימו לב:</strong> הנתונים המוצגים כאן מגיעים מ-localStorage בדפדפן. 
+      כאשר האתר יעלה לשרת עם PHP, הפניות יישלחו ישירות למייל: <strong>0542666568vc@gmail.com</strong>
+    </div>
+  </div>
+
+  <script>
+    function loadData() {
+      // Load quotes
+      const quotes = JSON.parse(localStorage.getItem('quoteRequests') || '[]');
+      const emails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
+      
+      // Update stats
+      document.getElementById('totalQuotes').textContent = quotes.length;
+      document.getElementById('totalNewsletters').textContent = emails.length;
+      document.getElementById('totalSent').textContent = quotes.filter(q => q.sent).length;
+      
+      // Render quotes table
+      if (quotes.length === 0) {
+        document.getElementById('quotesTable').innerHTML = `
+          <div class="empty-state">
+            <i class="bi bi-inbox"></i>
+            <p>אין בקשות הצעת מחיר עדיין</p>
+          </div>
+        `;
+      } else {
+        let html = `
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>שם</th>
+                  <th>טלפון</th>
+                  <th>אימייל</th>
+                  <th>שירות</th>
+                  <th>פרטים</th>
+                  <th>תאריך</th>
+                  <th>סטטוס</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+        quotes.reverse().forEach((quote, index) => {
+          const date = new Date(quote.date).toLocaleDateString('he-IL');
+          const time = new Date(quote.date).toLocaleTimeString('he-IL', { hour: '2-digit', minute: '2-digit' });
+          html += `
+            <tr>
+              <td>${quotes.length - index}</td>
+              <td><strong>${quote.name || '-'}</strong></td>
+              <td><a href="tel:${quote.phone}">${quote.phone || '-'}</a></td>
+              <td>${quote.email || '-'}</td>
+              <td>${quote.service || '-'}</td>
+              <td>${(quote.details || '-').substring(0, 50)}${(quote.details || '').length > 50 ? '...' : ''}</td>
+              <td>${date}<br><small>${time}</small></td>
+              <td><span class="badge ${quote.sent ? 'badge-sent' : 'badge-pending'}">${quote.sent ? 'נשלח' : 'ממתין'}</span></td>
+            </tr>
+          `;
+        });
+        html += '</tbody></table></div>';
+        document.getElementById('quotesTable').innerHTML = html;
+      }
+      
+      // Render emails table
+      if (emails.length === 0) {
+        document.getElementById('emailsTable').innerHTML = `
+          <div class="empty-state">
+            <i class="bi bi-envelope"></i>
+            <p>אין נרשמים לניוזלטר עדיין</p>
+          </div>
+        `;
+      } else {
+        let html = `
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>כתובת אימייל</th>
+                </tr>
+              </thead>
+              <tbody>
+        `;
+        emails.forEach((email, index) => {
+          html += `
+            <tr>
+              <td>${index + 1}</td>
+              <td><a href="mailto:${email}">${email}</a></td>
+            </tr>
+          `;
+        });
+        html += '</tbody></table></div>';
+        document.getElementById('emailsTable').innerHTML = html;
+      }
+    }
+    
+    function exportQuotes() {
+      const quotes = JSON.parse(localStorage.getItem('quoteRequests') || '[]');
+      if (quotes.length === 0) {
+        alert('אין נתונים לייצוא');
+        return;
+      }
+      
+      let csv = 'שם,טלפון,אימייל,שירות,פרטים,תאריך,נשלח\n';
+      quotes.forEach(q => {
+        csv += `"${q.name || ''}","${q.phone || ''}","${q.email || ''}","${q.service || ''}","${(q.details || '').replace(/"/g, '""')}","${q.date}","${q.sent ? 'כן' : 'לא'}"\n`;
+      });
+      
+      const blob = new Blob(['\ufeff' + csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'quote_requests_' + new Date().toISOString().split('T')[0] + '.csv';
+      link.click();
+    }
+    
+    function exportEmails() {
+      const emails = JSON.parse(localStorage.getItem('newsletterEmails') || '[]');
+      if (emails.length === 0) {
+        alert('אין נתונים לייצוא');
+        return;
+      }
+      
+      const blob = new Blob([emails.join('\n')], { type: 'text/plain;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'newsletter_emails_' + new Date().toISOString().split('T')[0] + '.txt';
+      link.click();
+    }
+    
+    function clearQuotes() {
+      if (confirm('האם אתה בטוח שברצונך למחוק את כל בקשות ההצעה?')) {
+        localStorage.removeItem('quoteRequests');
+        loadData();
+      }
+    }
+    
+    function clearEmails() {
+      if (confirm('האם אתה בטוח שברצונך למחוק את כל כתובות האימייל?')) {
+        localStorage.removeItem('newsletterEmails');
+        loadData();
+      }
+    }
+    
+    // Load data on page load
+    loadData();
+    
+    // Refresh every 30 seconds
+    setInterval(loadData, 30000);
+  </script>
+</body>
+</html>

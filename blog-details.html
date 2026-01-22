@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>מאמר - מסגריית יונה</title>
+  <meta name="description" content="מאמרים וטיפים מקצועיים בתחום עבודות הברזל והקונסטרוקציה">
+  <meta name="keywords" content="מסגריה, עבודות ברזל, קונסטרוקציה, בלוג, טיפים">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* ===== ARTICLE CONTAINER DARK THEME ===== */
+    .blog-details .article {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+      border-radius: 20px;
+      padding: 40px;
+    }
+    
+    /* ===== ARTICLE TYPOGRAPHY ===== */
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #ffffff;
+    }
+    
+    .article-content p {
+      color: #ffffff !important;
+      line-height: 1.9;
+    }
+    
+    .article-content h3 {
+      color: #ff6b5b;
+      margin: 45px 0 20px;
+      font-size: 1.6rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(255,255,255,0.1);
+    }
+    
+    .article-content h3 i {
+      font-size: 1.3rem;
+      background: linear-gradient(135deg, #ff6b5b 0%, #c9302c 100%);
+      color: white;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      flex-shrink: 0;
+    }
+    
+    .article-content h4 {
+      color: #ffffff;
+      margin: 30px 0 15px;
+      font-size: 1.25rem;
+      font-weight: 600;
+      position: relative;
+      padding-right: 15px;
+    }
+    
+    .article-content h4::before {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 5px;
+      height: calc(100% - 10px);
+      width: 4px;
+      background: #ff6b5b;
+      border-radius: 2px;
+    }
+    
+    .article-content p {
+      margin-bottom: 20px;
+      color: #d0d0d0;
+    }
+    
+    .article-content ul, .article-content ol {
+      margin-bottom: 25px;
+      padding-right: 25px;
+    }
+    
+    .article-content li {
+      margin-bottom: 14px;
+      line-height: 1.8;
+      color: #ffffff;
+    }
+    
+    .article-content li strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    
+    /* ===== BLOCKQUOTE ===== */
+    .article-content blockquote {
+      background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+      border-right: 5px solid #ff6b5b;
+      padding: 30px 35px 30px 25px;
+      margin: 40px 0;
+      border-radius: 12px;
+      position: relative;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+    
+    .article-content blockquote::before {
+      content: '"';
+      font-size: 5rem;
+      color: #ff6b5b;
+      opacity: 0.3;
+      position: absolute;
+      top: 0;
+      right: 20px;
+      font-family: Georgia, serif;
+      line-height: 1;
+    }
+    
+    .article-content blockquote p {
+      font-size: 1.15rem;
+      font-style: italic;
+      margin-bottom: 15px;
+      position: relative;
+      color: #ffffff;
+      padding-right: 15px;
+    }
+    
+    .article-content blockquote cite {
+      font-weight: 700;
+      color: #ff6b5b;
+      font-style: normal;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .article-content blockquote cite::before {
+      content: '—';
+      color: #888;
+    }
+    
+    /* ===== INFO BOXES ===== */
+    .tip-box, .warning-box, .info-box {
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin: 35px 0;
+      position: relative;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.3);
+    }
+    
+    /* Tip Box - Green on Dark */
+    .tip-box {
+      background: linear-gradient(135deg, #1b3d1b 0%, #2e5a2e 100%);
+      border-right: 5px solid #4caf50;
+    }
+    
+    .tip-box h5 {
+      color: #81c784;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .tip-box h5 i { 
+      color: #fff;
+      background: #4caf50;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .tip-box p { color: #a5d6a7; margin: 0; font-weight: 500; }
+    
+    /* Warning Box - Amber on Dark */
+    .warning-box {
+      background: linear-gradient(135deg, #4a3000 0%, #5d4000 100%);
+      border-right: 5px solid #ff9800;
+    }
+    
+    .warning-box h5 {
+      color: #ffcc80;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .warning-box h5 i { 
+      color: #fff;
+      background: #ff9800;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .warning-box p { color: #ffe0b2; margin: 0; font-weight: 500; }
+    
+    /* Info Box - Blue on Dark */
+    .info-box {
+      background: linear-gradient(135deg, #0d2137 0%, #1a3a5c 100%);
+      border-right: 5px solid #2196f3;
+    }
+    
+    .info-box h5 {
+      color: #90caf9;
+      margin-bottom: 12px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .info-box h5 i { 
+      color: #fff;
+      background: #2196f3;
+      padding: 6px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .info-box p { color: #bbdefb; margin: 0; font-weight: 500; }
+    .info-box a { color: #90caf9; font-weight: 700; text-decoration: underline; }
+    
+    /* ===== TABLES ===== */
+    .comparison-table {
+      width: 100%;
+      margin: 35px 0;
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: 0.95rem;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      border: 1px solid #444;
+    }
+    
+    .comparison-table th {
+      background: linear-gradient(135deg, #ff6b5b 0%, #c9302c 100%);
+      color: white;
+      padding: 16px 20px;
+      text-align: right;
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+    }
+    
+    .comparison-table th:first-child {
+      border-radius: 0 12px 0 0;
+    }
+    
+    .comparison-table th:last-child {
+      border-radius: 12px 0 0 0;
+    }
+    
+    .comparison-table td {
+      padding: 15px 20px;
+      border-bottom: 1px solid #444;
+      text-align: right;
+      color: #e0e0e0;
+      font-weight: 500;
+      background: #2a2a2a;
+    }
+    
+    .comparison-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .comparison-table tbody tr:nth-child(even) td {
+      background: #333;
+    }
+    
+    .comparison-table tbody tr:hover td {
+      background: #3a3a3a;
+    }
+    
+    .comparison-table td:first-child {
+      font-weight: 600;
+      color: #ffffff;
+    }
+    
+    /* ===== SHARE BUTTONS ===== */
+    .share-section {
+      background: linear-gradient(135deg, #2a2a2a 0%, #333 100%);
+      border-radius: 12px;
+      padding: 25px 30px;
+      margin-top: 45px;
+      border: 1px solid #444;
+    }
+    
+    .share-section h5 {
+      margin-bottom: 18px;
+      font-weight: 700;
+      color: #ffffff;
+      font-size: 1.1rem;
+    }
+    
+    .share-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    
+    .share-buttons a {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      color: white;
+      font-size: 1.3rem;
+      transition: all 0.3s ease;
+    }
+    
+    .share-buttons a:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+    
+    .share-buttons .facebook { background: linear-gradient(135deg, #1877f2 0%, #0d5bb5 100%); }
+    .share-buttons .whatsapp { background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); }
+    .share-buttons .twitter { background: linear-gradient(135deg, #555 0%, #333 100%); }
+    .share-buttons .linkedin { background: linear-gradient(135deg, #0077b5 0%, #005582 100%); }
+    
+    /* ===== ARTICLE IMAGE ===== */
+    .article .post-img {
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 35px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    
+    .article .post-img img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .article .post-img:hover img {
+      transform: scale(1.02);
+    }
+    
+    .article .title {
+      color: #ffffff;
+      font-weight: 700;
+      line-height: 1.4;
+    }
+    
+    /* ===== META INFO ===== */
+    .meta-top ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      list-style: none;
+      padding: 15px 20px;
+      margin: 0 0 30px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 10px;
+    }
+    
+    .meta-top ul li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #ccc;
+      font-weight: 500;
+    }
+    
+    .meta-top ul li i {
+      color: #ff6b5b;
+      font-size: 1rem;
+    }
+    
+    /* ===== SIDEBAR CTA ===== */
+    .cta-widget {
+      background: linear-gradient(135deg, #c9302c 0%, #a02622 100%);
+      color: white;
+      border-radius: 16px;
+      padding: 35px 30px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(201, 48, 44, 0.3);
+    }
+    
+    .cta-widget i.bi-telephone-fill {
+      background: rgba(255,255,255,0.2);
+      padding: 18px;
+      border-radius: 50%;
+    }
+    
+    .cta-widget h3 {
+      color: white;
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    
+    .cta-widget p {
+      margin-bottom: 22px;
+      opacity: 0.95;
+      font-size: 1rem;
+    }
+    
+    .cta-widget .btn {
+      font-size: 1.15rem;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .cta-widget .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    /* ===== RELATED POSTS ===== */
+    .related-post-card {
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      height: 100%;
+      background: white;
+      border: 1px solid #eee;
+    }
+    
+    .related-post-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+    
+    .related-post-card img {
+      height: 170px;
+      width: 100%;
+      object-fit: cover;
+    }
+    
+    .related-post-card .card-body {
+      padding: 22px;
+    }
+    
+    .related-post-card h5 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+    
+    .related-post-card h5 a {
+      color: #1a1a1a;
+      transition: color 0.3s;
+    }
+    
+    .related-post-card h5 a:hover {
+      color: #c9302c;
+    }
+    
+    .related-post-card small {
+      color: #666;
+      font-weight: 500;
+    }
+    
+    /* ===== SIDEBAR CARDS ===== */
+    .col-lg-4 .card {
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    
+    .col-lg-4 .card h4 {
+      color: #1a1a1a;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    
+    .col-lg-4 .card h4 i {
+      color: #c9302c;
+    }
+    
+    .col-lg-4 .card a {
+      color: #4a4a4a;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    
+    .col-lg-4 .card a:hover {
+      color: #c9302c;
+    }
+    
+    .col-lg-4 .badge.bg-light {
+      background: #f0f0f0 !important;
+      color: #333 !important;
+      font-weight: 600;
+      border: 1px solid #e0e0e0;
+    }
+    
+    .col-lg-4 .badge.bg-light:hover {
+      background: #c9302c !important;
+      color: white !important;
+      border-color: #c9302c;
+    }
+    
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 992px) {
+      .article-content h3 {
+        font-size: 1.45rem;
+      }
+      
+      .comparison-table {
+        font-size: 0.9rem;
+      }
+      
+      /* Ensure dark article container on tablet */
+      .blog-details .article {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+        padding: 30px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      /* Mobile: light background with dark text for better readability */
+      .blog-details .article {
+        background: #ffffff !important;
+        padding: 20px !important;
+        border-radius: 15px;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      }
+      
+      .article-content {
+        font-size: 1rem;
+        color: #1a1a1a !important;
+      }
+      
+      .article-content p {
+        color: #333333 !important;
+      }
+      
+      .article-content h3 {
+        font-size: 1.3rem;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        color: #e74c3c !important;
+      }
+      
+      .article-content h3 i {
+        width: 32px;
+        height: 32px;
+        font-size: 1.1rem;
+        background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%) !important;
+        color: #ffffff !important;
+      }
+      
+      .article-content h4 {
+        color: #1a1a1a !important;
+      }
+      
+      .article-content h4::before {
+        background: #e74c3c !important;
+      }
+      
+      .article-content li {
+        color: #333333 !important;
+      }
+      
+      .article-content li strong {
+        color: #1a1a1a !important;
+      }
+      
+      .article .title {
+        color: #1a1a1a !important;
+      }
+      
+      .article .post-img img {
+        height: 250px;
+      }
+      
+      .comparison-table {
+        font-size: 0.8rem;
+      }
+      
+      .comparison-table th, .comparison-table td {
+        padding: 10px 12px;
+      }
+      
+      .comparison-table td {
+        color: #333333 !important;
+        background: #f8f8f8 !important;
+      }
+      
+      .comparison-table th {
+        color: #ffffff !important;
+        background: #e74c3c !important;
+      }
+      
+      .comparison-table tbody tr:nth-child(even) td {
+        background: #f0f0f0 !important;
+      }
+      
+      .tip-box, .warning-box, .info-box {
+        padding: 20px;
+        background: #f8f9fa !important;
+        border-color: #e74c3c !important;
+      }
+      
+      .tip-box p, .warning-box p, .info-box p {
+        font-size: 0.95rem;
+        color: #333333 !important;
+      }
+      
+      .tip-box h4, .warning-box h4, .info-box h4 {
+        color: #1a1a1a !important;
+      }
+      
+      .meta-top ul {
+        gap: 12px;
+        padding: 12px 15px;
+        background: rgba(0,0,0,0.05) !important;
+        border-radius: 8px;
+      }
+      
+      .meta-top ul li {
+        color: #555555 !important;
+      }
+      
+      .share-section {
+        padding: 20px;
+        background: #f8f9fa !important;
+        border-radius: 10px;
+      }
+      
+      .share-section h5 {
+        color: #1a1a1a !important;
+      }
+      
+      .cta-widget {
+        padding: 25px 20px;
+      }
+      
+      /* Blockquote mobile contrast */
+      .article-content blockquote {
+        background: linear-gradient(135deg, #2a2a2a 0%, #333 100%) !important;
+        padding: 20px 25px 20px 20px;
+      }
+      
+      .article-content blockquote p {
+        color: #e0e0e0 !important;
+        font-size: 1rem;
+      }
+      
+      .article-content blockquote cite {
+        color: #ff6b5b !important;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .blog-details .article {
+        padding: 15px !important;
+        margin: 0 -10px;
+        border-radius: 12px;
+      }
+      
+      .article .post-img img {
+        height: 200px;
+      }
+      
+      .related-post-card img {
+        height: 140px;
+      }
+      
+      .comparison-table {
+        display: block;
+        overflow-x: auto;
+      }
+      
+      .article-content h3 {
+        font-size: 1.2rem;
+      }
+      
+      .article-content h4 {
+        font-size: 1.1rem;
+      }
+      
+      .tip-box, .warning-box, .info-box {
+        padding: 15px;
+        margin: 25px 0;
+      }
+      
+      .tip-box h5, .warning-box h5, .info-box h5 {
+        font-size: 1rem;
+      }
+      
+      .share-buttons a {
+        width: 42px;
+        height: 42px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="blog-details-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo_light.svg" alt="Light Logo" class="logo-default">
+        <img src="assets/img/logo_dark.svg" alt="Dark Logo" class="logo-scrolled">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">דף הבית</a></li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="services.html">שירותים</a></li>
+          <li><a href="projects.html">פרויקטים</a></li>
+          <li><a href="blog.html" class="active">בלוג</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1 id="page-title">טוען מאמר...</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">דף הבית</a></li>
+            <li><a href="blog.html">בלוג</a></li>
+            <li class="current" id="breadcrumb-title">מאמר</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+
+    <div class="container py-5">
+      <div class="row">
+
+        <!-- Main Content -->
+        <div class="col-lg-8">
+          <article class="article">
+            <div class="post-img">
+              <img id="article-image" src="assets/img/blog/blog-1.jpg" alt="">
+            </div>
+
+            <h1 class="title mb-3" id="article-title" style="font-size: 2rem; font-weight: 700;">טוען...</h1>
+
+            <div class="meta-top">
+              <ul>
+                <li><i class="bi bi-person-fill"></i> צוות מסגריית יונה</li>
+                <li><i class="bi bi-calendar3"></i> <span id="article-date">טוען...</span></li>
+                <li><i class="bi bi-eye-fill"></i> <span id="article-views">--</span> צפיות</li>
+                <li><i class="bi bi-folder-fill"></i> <span id="article-category">קטגוריה</span></li>
+              </ul>
+            </div>
+
+            <div class="content article-content" id="article-content">
+              <!-- Content loaded dynamically -->
+            </div>
+
+            <!-- Share Section -->
+            <div class="share-section">
+              <h5><i class="bi bi-share-fill me-2"></i>שתפו את המאמר</h5>
+              <div class="share-buttons">
+                <a href="#" class="facebook" onclick="shareOnFacebook(); return false;" title="שתפו בפייסבוק"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="whatsapp" onclick="shareOnWhatsApp(); return false;" title="שתפו בוואטסאפ"><i class="bi bi-whatsapp"></i></a>
+                <a href="#" class="twitter" onclick="shareOnTwitter(); return false;" title="שתפו בטוויטר"><i class="bi bi-twitter-x"></i></a>
+                <a href="#" class="linkedin" onclick="shareOnLinkedIn(); return false;" title="שתפו בלינקדאין"><i class="bi bi-linkedin"></i></a>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="mt-4">
+              <i class="bi bi-tags-fill me-2" style="color: var(--accent-color);"></i>
+              <span id="article-tags-display"><!-- Tags here --></span>
+            </div>
+          </article>
+
+          <!-- Author Box -->
+          <div class="card mt-5" style="border-radius: 15px; overflow: hidden;">
+            <div class="card-body p-4">
+              <div class="d-flex align-items-center gap-4">
+                <img src="assets/img/blog/blog-author.jpg" alt="צוות מסגריית יונה" class="rounded-circle" style="width: 100px; height: 100px; object-fit: cover;">
+                <div>
+                  <h4 class="mb-2">צוות מסגריית יונה</h4>
+                  <p class="text-muted mb-3">מומחים בעבודות ברזל וקונסטרוקציה מאז 1983</p>
+                  <div class="d-flex gap-3">
+                    <a href="https://www.facebook.com/masgeriyat.yonah" target="_blank" class="text-primary"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="https://www.instagram.com/masgeriyatyona" target="_blank" class="text-danger"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="tel:0526884857" class="text-success"><i class="bi bi-telephone-fill fs-5"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Related Posts -->
+          <div class="mt-5">
+            <h3 class="mb-4"><i class="bi bi-collection me-2" style="color: var(--accent-color);"></i>מאמרים נוספים שיעניינו אתכם</h3>
+            <div class="row g-4" id="related-posts">
+              <!-- Loaded dynamically -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+          <div class="sticky-top" style="top: 100px;">
+            
+            <!-- CTA Widget -->
+            <div class="cta-widget mb-4">
+              <i class="bi bi-telephone-fill fs-1 mb-3 d-block"></i>
+              <h3>צריכים ייעוץ מקצועי?</h3>
+              <p>המומחים שלנו ישמחו לענות על כל שאלה וללוות אתכם בפרויקט</p>
+              <a href="tel:0526884857" class="btn btn-light btn-lg w-100">
+                <i class="bi bi-telephone me-2"></i>052-688-4857
+              </a>
+            </div>
+
+            <!-- Categories -->
+            <div class="card mb-4" style="border-radius: 15px;">
+              <div class="card-body p-4">
+                <h4 class="mb-3"><i class="bi bi-folder2-open me-2" style="color: var(--accent-color);"></i>קטגוריות</h4>
+                <ul class="list-unstyled mb-0">
+                  <li class="mb-2"><a href="blog.html" class="text-decoration-none d-flex justify-content-between"><span>טיפים מקצועיים</span><span class="badge bg-secondary">3</span></a></li>
+                  <li class="mb-2"><a href="blog.html" class="text-decoration-none d-flex justify-content-between"><span>קונסטרוקציה</span><span class="badge bg-secondary">2</span></a></li>
+                  <li class="mb-2"><a href="blog.html" class="text-decoration-none d-flex justify-content-between"><span>עיצוב</span><span class="badge bg-secondary">1</span></a></li>
+                  <li class="mb-2"><a href="blog.html" class="text-decoration-none d-flex justify-content-between"><span>בטיחות</span><span class="badge bg-secondary">1</span></a></li>
+                  <li class="mb-2"><a href="blog.html" class="text-decoration-none d-flex justify-content-between"><span>תחזוקה</span><span class="badge bg-secondary">1</span></a></li>
+                  <li><a href="blog.html" class="text-decoration-none d-flex justify-content-between"><span>פרויקטים</span><span class="badge bg-secondary">1</span></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="card mb-4" style="border-radius: 15px;">
+              <div class="card-body p-4">
+                <h4 class="mb-3"><i class="bi bi-clock-history me-2" style="color: var(--accent-color);"></i>מאמרים אחרונים</h4>
+                <div id="recent-posts">
+                  <!-- Loaded dynamically -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Popular Tags -->
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-4">
+                <h4 class="mb-3"><i class="bi bi-tags me-2" style="color: var(--accent-color);"></i>תגיות פופולריות</h4>
+                <div class="d-flex flex-wrap gap-2">
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">פלדה</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">מעקות</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">שערים</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">קונסטרוקציה</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">מדרגות</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">נירוסטה</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">בטיחות</a>
+                  <a href="blog.html" class="badge bg-light text-dark text-decoration-none py-2 px-3">גלוון</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="assets/img/gear.svg" alt="Loading" style="width: 80px; height: 80px; animation: rotate-gear 1.5s linear infinite;">
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Component Loader -->
+  <script src="assets/js/loadComponents.js"></script>
+
+  <script>
+    // ============================================
+    // BLOG ARTICLES DATABASE
+    // ============================================
+    const articles = {
+      
+      // Article 1: Steel Types Guide
+      'steel-types': {
+        id: 'steel-types',
+        title: 'המדריך המלא לבחירת סוג הפלדה לפרויקט שלכם',
+        shortTitle: 'בחירת סוג פלדה',
+        date: '15 ינואר 2026',
+        image: 'assets/img/projects/steel-structures.jpg',
+        category: 'טיפים מקצועיים',
+        tags: ['פלדה', 'קונסטרוקציה', 'גלוון', 'נירוסטה'],
+        views: 1247,
+        content: `
+          <p>בחירת סוג הפלדה המתאים היא הבסיס להצלחת כל פרויקט מתכת. בחירה נכונה תבטיח עמידות לאורך שנים, מראה מושלם ועלות תחזוקה מינימלית. במדריך זה נסקור את כל סוגי הפלדה הנפוצים ונעזור לכם לבחור נכון.</p>
+
+          <h3><i class="bi bi-1-circle-fill"></i> פלדת פחמן - הבסיס</h3>
+          <p>פלדת פחמן היא הסוג הנפוץ והמשתלם ביותר בשוק. מורכבת מברזל ופחמן בשיעורים שונים:</p>
+          <ul>
+            <li><strong>פחמן נמוך (עד 0.3%)</strong> - רכה, קלה לעיבוד וריתוך. מתאימה למעקות פשוטים וגדרות</li>
+            <li><strong>פחמן בינוני (0.3%-0.6%)</strong> - חזקה יותר, אידיאלית לקונסטרוקציות ומבנים</li>
+            <li><strong>פחמן גבוה (מעל 0.6%)</strong> - קשיחה מאוד, לשימושים תעשייתיים כבדים</li>
+          </ul>
+          
+          <div class="warning-box">
+            <h5><i class="bi bi-exclamation-triangle-fill"></i> שימו לב</h5>
+            <p>פלדת פחמן רגישה לחלודה ודורשת הגנה - צביעה, גלוון או ציפוי אחר. בלי הגנה מתאימה, החלודה תתחיל להופיע תוך חודשים ספורים.</p>
+          </div>
+
+          <h3><i class="bi bi-2-circle-fill"></i> פלדה מגולוונת - ההגנה האולטימטיבית</h3>
+          <p>פלדה מגולוונת היא פלדת פחמן שעברה ציפוי אבץ בתהליך הנקרא "גלוון". הציפוי מגן על הפלדה בשתי דרכים:</p>
+          <ul>
+            <li><strong>הגנה פיזית</strong> - שכבת האבץ יוצרת מחסום בין הברזל לסביבה</li>
+            <li><strong>הגנה קתודית</strong> - האבץ "מקריב" את עצמו ונשחק במקום הברזל</li>
+          </ul>
+          
+          <h4>סוגי גלוון נפוצים:</h4>
+          <ul>
+            <li><strong>גלוון חם (Hot-Dip)</strong> - טבילה באבץ מותך. ציפוי עבה ועמיד, מחזיק 40-100 שנים!</li>
+            <li><strong>גלוון אלקטרוליטי</strong> - ציפוי דק יותר, מתאים בעיקר לשימוש פנימי</li>
+          </ul>
+
+          <div class="tip-box">
+            <h5><i class="bi bi-lightbulb-fill"></i> המלצת מומחה</h5>
+            <p>לפרויקטים חיצוניים באזור מרכז הארץ, גלוון חם הוא הבחירה המשתלמת ביותר - יחס עלות-תועלת מעולה לאורך שנים.</p>
+          </div>
+
+          <h3><i class="bi bi-3-circle-fill"></i> נירוסטה (פלדת אל-חלד)</h3>
+          <p>נירוסטה מכילה לפחות 10.5% כרום, מה שמעניק לה עמידות מצוינת לחלודה. הסוגים הנפוצים:</p>
+          <ul>
+            <li><strong>304 (18/8)</strong> - הנפוצה ביותר. 18% כרום, 8% ניקל. מתאימה לרוב השימושים</li>
+            <li><strong>316 (Marine Grade)</strong> - מכילה מוליבדן לעמידות מוגברת. חובה באזורי חוף!</li>
+            <li><strong>430</strong> - ללא ניקל, זולה יותר אך פחות עמידה</li>
+          </ul>
+
+          <h3><i class="bi bi-table"></i> טבלת השוואה מקיפה</h3>
+          <table class="comparison-table">
+            <tr>
+              <th>קריטריון</th>
+              <th>פלדת פחמן</th>
+              <th>מגולוונת</th>
+              <th>נירוסטה 304</th>
+              <th>נירוסטה 316</th>
+            </tr>
+            <tr>
+              <td>עמידות לחלודה</td>
+              <td>⭐ נמוכה</td>
+              <td>⭐⭐⭐⭐ גבוהה</td>
+              <td>⭐⭐⭐⭐⭐ מעולה</td>
+              <td>⭐⭐⭐⭐⭐ מעולה</td>
+            </tr>
+            <tr>
+              <td>עלות יחסית</td>
+              <td>₪</td>
+              <td>₪₪</td>
+              <td>₪₪₪</td>
+              <td>₪₪₪₪</td>
+            </tr>
+            <tr>
+              <td>קלות ריתוך</td>
+              <td>קל מאוד</td>
+              <td>קל</td>
+              <td>בינוני</td>
+              <td>מאתגר</td>
+            </tr>
+            <tr>
+              <td>תחזוקה נדרשת</td>
+              <td>גבוהה</td>
+              <td>נמוכה</td>
+              <td>מינימלית</td>
+              <td>מינימלית</td>
+            </tr>
+            <tr>
+              <td>אורך חיים</td>
+              <td>10-20 שנה</td>
+              <td>40-100 שנה</td>
+              <td>50+ שנים</td>
+              <td>75+ שנים</td>
+            </tr>
+          </table>
+
+          <h3><i class="bi bi-house-door-fill"></i> המלצות לפי סוג פרויקט</h3>
+          <ul>
+            <li><strong>פרויקטים פנימיים</strong> - פלדת פחמן + צביעה איכותית</li>
+            <li><strong>פרויקטים חיצוניים רגילים</strong> - פלדה מגולוונת חמה</li>
+            <li><strong>אזורי חוף (עד 500 מ' מהים)</strong> - נירוסטה 316 בלבד!</li>
+            <li><strong>מבני ציבור</strong> - נירוסטה 304 לבטיחות ואפס תחזוקה</li>
+          </ul>
+
+          <blockquote>
+            <p>בחירה נכונה של חומרי הגלם היא חצי מהדרך להצלחה. פרויקט שיעמוד 50 שנה שווה יותר משניים שיחלידו אחרי 15.</p>
+            <cite>יונה לוי, מייסד מסגריית יונה</cite>
+          </blockquote>
+
+          <div class="info-box">
+            <h5><i class="bi bi-telephone-fill"></i> לא בטוחים מה מתאים לכם?</h5>
+            <p><a href="contact.html" style="color: #004085; font-weight: 600;">צרו קשר לייעוץ חינם</a> - נשמח לבחון את הפרויקט ולהמליץ על החומר המתאים ביותר.</p>
+          </div>
+        `
+      },
+
+      // Article 2: Railing Maintenance
+      'railing-maintenance': {
+        id: 'railing-maintenance',
+        title: 'תחזוקת מעקות ברזל - המדריך השלם לשמירה לאורך שנים',
+        shortTitle: 'תחזוקת מעקות',
+        date: '8 ינואר 2026',
+        image: 'assets/img/projects/railings.jpg',
+        category: 'תחזוקה',
+        tags: ['מעקות', 'תחזוקה', 'חלודה', 'צביעה'],
+        views: 892,
+        content: `
+          <p>מעקות ברזל הם השקעה משמעותית בנכס. תחזוקה נכונה ושוטפת מאריכה את חייהם בעשרות שנים ושומרת על המראה המרשים לאורך זמן. הנה כל מה שצריך לדעת.</p>
+
+          <h3><i class="bi bi-calendar-check-fill"></i> לוח תחזוקה מומלץ</h3>
+          
+          <h4>בדיקה חודשית (5 דקות)</h4>
+          <ul>
+            <li>בדיקה ויזואלית לסימני חלודה חדשים</li>
+            <li>וידוא יציבות ברגים וחיבורים</li>
+            <li>איתור נזק מכני (שריטות, מכות)</li>
+          </ul>
+
+          <h4>ניקוי רבעוני (20 דקות)</h4>
+          <ul>
+            <li>שטיפה במים ונוזל כלים עדין</li>
+            <li>מברשת רכה להסרת לכלוך</li>
+            <li>שטיפה וייבוש יסודי</li>
+          </ul>
+
+          <h4>תחזוקה שנתית (שעה-שעתיים)</h4>
+          <ul>
+            <li>בדיקה יסודית של כל המעקה</li>
+            <li>טיפול בנקודות חלודה</li>
+            <li>שמירה על ברגים (WD-40 או שמן דומה)</li>
+            <li>ציפוי שעווה מגן (אופציונלי)</li>
+          </ul>
+
+          <div class="tip-box">
+            <h5><i class="bi bi-lightbulb-fill"></i> הזמן הנכון לבדיקה</h5>
+            <p>תחילת האביב היא הזמן האידיאלי לבדיקה שנתית - לפני עונת החום והלחות של הקיץ.</p>
+          </div>
+
+          <h3><i class="bi bi-tools"></i> טיפול בחלודה - שלב אחר שלב</h3>
+          
+          <h4>שלב 1: הכנה</h4>
+          <ul>
+            <li>נקו את האזור מאבק ולכלוך</li>
+            <li>הגנו על הרצפה והקירות עם ניילון</li>
+          </ul>
+
+          <h4>שלב 2: הסרת החלודה</h4>
+          <p><strong>לחלודה קלה:</strong></p>
+          <ul>
+            <li>נייר זכוכית גס (80-120) עד למתכת נקייה</li>
+            <li>סיום עם נייר עדין (220)</li>
+          </ul>
+          <p><strong>לחלודה עמוקה:</strong></p>
+          <ul>
+            <li>מברשת תיל או מלטשת חשמלית</li>
+            <li>ממיר חלודה כימי במידת הצורך</li>
+          </ul>
+
+          <h4>שלב 3: הגנה וצביעה</h4>
+          <ul>
+            <li>יסוד נגד חלודה (פריימר)</li>
+            <li>המתנה לייבוש מלא</li>
+            <li>2 שכבות צבע לפחות</li>
+            <li>24 שעות בין שכבות</li>
+          </ul>
+
+          <div class="warning-box">
+            <h5><i class="bi bi-exclamation-triangle-fill"></i> אזהרה חשובה</h5>
+            <p>אל תצבעו בטמפרטורה מתחת ל-10°C או מעל 35°C, בלחות גבוהה או כשצפוי גשם ב-24 השעות הקרובות.</p>
+          </div>
+
+          <h3><i class="bi bi-cart-check-fill"></i> חומרים מומלצים</h3>
+          <table class="comparison-table">
+            <tr>
+              <th>מוצר</th>
+              <th>מותגים מומלצים</th>
+            </tr>
+            <tr>
+              <td>יסוד (פריימר)</td>
+              <td>טמבור אנטירוסט / המרב לברזל</td>
+            </tr>
+            <tr>
+              <td>צבע עליון</td>
+              <td>טמבור מטאליק / נירלט לברזל</td>
+            </tr>
+            <tr>
+              <td>ממיר חלודה</td>
+              <td>Rust-Oleum / Hammerite</td>
+            </tr>
+          </table>
+
+          <h3><i class="bi bi-person-raised-hand"></i> מתי לקרוא למומחה?</h3>
+          <ul>
+            <li>חלודה שחדרה יותר מ-20% מעובי החומר</li>
+            <li>ריתוכים פגומים או סדוקים</li>
+            <li>רעד או חוסר יציבות במעקה</li>
+            <li>ברגי עיגון רופפים בקיר</li>
+          </ul>
+
+          <blockquote>
+            <p>תחזוקה של 15 דקות בחודש חוסכת תיקון של שבוע אחרי שנים. זה כמו שיניים - מניעה קלה יותר מטיפול.</p>
+            <cite>צוות התחזוקה, מסגריית יונה</cite>
+          </blockquote>
+        `
+      },
+
+      // Article 3: Gate Design Trends 2026
+      'gate-design-2026': {
+        id: 'gate-design-2026',
+        title: 'מגמות עיצוב שערים 2026 - הטרנדים החמים ביותר',
+        shortTitle: 'עיצוב שערים 2026',
+        date: '1 ינואר 2026',
+        image: 'assets/img/projects/gates.jpg',
+        category: 'עיצוב',
+        tags: ['שערים', 'עיצוב', 'טרנדים', 'מודרני'],
+        views: 1583,
+        content: `
+          <p>עולם עיצוב שערי הברזל עובר מהפכה. מגמות חדשות, חומרים משולבים וטכנולוגיות חכמות משנים את הדרך שבה אנחנו חושבים על השער. הנה הטרנדים החמים ל-2026.</p>
+
+          <h3><i class="bi bi-1-circle-fill"></i> מינימליזם גיאומטרי</h3>
+          <p>הטרנד הדומיננטי של השנה - קווים נקיים וצורות גיאומטריות במקום עיטורים מורכבים:</p>
+          <ul>
+            <li><strong>פסים אופקיים</strong> - תחושת רוחב ומודרניות</li>
+            <li><strong>ריבועים ומלבנים</strong> - סימטריה מושלמת</li>
+            <li><strong>חללים שליליים</strong> - שימוש ברווחים כחלק מהעיצוב</li>
+          </ul>
+
+          <h3><i class="bi bi-2-circle-fill"></i> שילוב חומרים (Mixed Materials)</h3>
+          <p>שילובים מרגשים של ברזל עם חומרים אחרים:</p>
+          <ul>
+            <li><strong>ברזל + עץ</strong> - ניגוד בין קר לחם, עץ איפא או טיק</li>
+            <li><strong>ברזל + זכוכית</strong> - שער שקוף ואלגנטי</li>
+            <li><strong>ברזל + אבן</strong> - עמודי אבן עם שער ביניהם</li>
+          </ul>
+
+          <h3><i class="bi bi-3-circle-fill"></i> גוונים כהים ומאט</h3>
+          <ul>
+            <li><strong>שחור מאט</strong> - הגוון הפופולרי ביותר, אלגנטי ונצחי</li>
+            <li><strong>אפור אנתרציט</strong> - רך יותר, משתלב עם הכל</li>
+            <li><strong>קורטן (Corten)</strong> - פלדה בצבע חלודה, מראה תעשייתי ייחודי</li>
+          </ul>
+
+          <h3><i class="bi bi-4-circle-fill"></i> שערים חכמים</h3>
+          <p>טכנולוגיה שהפכה לסטנדרט בשנת 2026:</p>
+          <ul>
+            <li><strong>פתיחה באפליקציה</strong> - שליטה מלאה מהסמארטפון</li>
+            <li><strong>זיהוי לוחית רישוי</strong> - פתיחה אוטומטית לרכבים מורשים</li>
+            <li><strong>אינטרקום וידאו</strong> - לראות מי בשער מכל מקום בעולם</li>
+            <li><strong>קודים זמניים</strong> - לאורחים ומשלוחים</li>
+          </ul>
+
+          <div class="info-box">
+            <h5><i class="bi bi-info-circle-fill"></i> פתרון מלא</h5>
+            <p>מסגריית יונה משתפת פעולה עם חברות אוטומציה מובילות - מהעיצוב ועד ההתקנה, הכל בידיים אחת.</p>
+          </div>
+
+          <h3><i class="bi bi-5-circle-fill"></i> שערי הזזה - הבחירה הפופולרית</h3>
+          <p>יתרונות שערי הזזה שהופכים אותם לבחירה הנפוצה:</p>
+          <ul>
+            <li>חוסכים מקום - אין רדיוס פתיחה</li>
+            <li>בטוחים יותר - לא נעים ברוח</li>
+            <li>קלים לאוטומציה</li>
+            <li>מאפשרים עיצובים ארוכים ומרשימים</li>
+          </ul>
+
+          <blockquote>
+            <p>העיצוב הטוב ביותר משלב טרנדים עכשוויים עם הטעם האישי. אנחנו תמיד מתחילים משיחה על מה הלקוח אוהב.</p>
+            <cite>דוד לוי, מעצב ראשי, מסגריית יונה</cite>
+          </blockquote>
+
+          <h3><i class="bi bi-check-circle-fill"></i> איך לבחור נכון?</h3>
+          <ol>
+            <li><strong>התחילו מהבית</strong> - השער צריך להשתלב עם סגנון הבית</li>
+            <li><strong>חשבו על תפקוד</strong> - פרטיות, אוורור, תאורה</li>
+            <li><strong>תכננו לעתיד</strong> - אוטומציה, מצלמות, תאורה</li>
+            <li><strong>התייעצו עם מומחה</strong> - אנחנו כאן לעזור!</li>
+          </ol>
+        `
+      },
+
+      // Article 4: Steel vs Concrete
+      'steel-vs-concrete': {
+        id: 'steel-vs-concrete',
+        title: 'פלדה מול בטון - איזו קונסטרוקציה מתאימה לכם?',
+        shortTitle: 'פלדה מול בטון',
+        date: '25 דצמבר 2025',
+        image: 'assets/img/projects/structural-reinforcement.jpg',
+        category: 'קונסטרוקציה',
+        tags: ['קונסטרוקציה', 'פלדה', 'בטון', 'תוספות בנייה'],
+        views: 2341,
+        content: `
+          <p>בתכנון תוספת בנייה או פרגולה מקורה, אחת ההחלטות הראשונות היא בחירת חומר הקונסטרוקציה. נשווה בין שתי האפשרויות המרכזיות - פלדה ובטון.</p>
+
+          <h3><i class="bi bi-building-fill"></i> קונסטרוקציית פלדה - היתרונות</h3>
+          
+          <h4>1. מהירות הקמה</h4>
+          <p>היתרון המשמעותי ביותר! הקונסטרוקציה מיוצרת מראש במפעל ומורכבת באתר תוך ימים:</p>
+          <ul>
+            <li>תוספת קומה בפלדה: <strong>2-4 שבועות</strong></li>
+            <li>תוספת קומה בבטון: <strong>2-4 חודשים</strong></li>
+          </ul>
+
+          <h4>2. משקל נמוך</h4>
+          <p>פלדה קלה פי 3-4 מבטון באותו נפח נושא עומסים. קריטי כאשר:</p>
+          <ul>
+            <li>מוסיפים קומות למבנה קיים</li>
+            <li>בונים על קרקע חלשה</li>
+            <li>רוצים למזער יסודות</li>
+          </ul>
+
+          <h4>3. גמישות עיצובית</h4>
+          <p>מוטות ארוכים ללא תמיכה = חללים פתוחים גדולים, פחות עמודים, חלונות גדולים יותר.</p>
+
+          <div class="tip-box">
+            <h5><i class="bi bi-recycle"></i> ידידותי לסביבה</h5>
+            <p>פלדה ניתנת למיחזור ב-100%. בתום חיי המבנה, ניתן להפוך את הפלדה למוצרים חדשים.</p>
+          </div>
+
+          <h3><i class="bi bi-bricks"></i> קונסטרוקציית בטון - היתרונות</h3>
+          <ul>
+            <li><strong>עלות נמוכה יותר</strong> - כשיש זמן והמבנה פשוט</li>
+            <li><strong>בידוד טבעי</strong> - אקוסטי וטרמי</li>
+            <li><strong>עמידות לאש</strong> - בטון אינו בוער</li>
+          </ul>
+
+          <h3><i class="bi bi-table"></i> השוואה מקיפה</h3>
+          <table class="comparison-table">
+            <tr>
+              <th>קריטריון</th>
+              <th>פלדה</th>
+              <th>בטון</th>
+            </tr>
+            <tr>
+              <td>זמן הקמה</td>
+              <td>✅ מהיר (שבועות)</td>
+              <td>❌ איטי (חודשים)</td>
+            </tr>
+            <tr>
+              <td>משקל</td>
+              <td>✅ קל</td>
+              <td>❌ כבד</td>
+            </tr>
+            <tr>
+              <td>גמישות עיצובית</td>
+              <td>✅ גבוהה מאוד</td>
+              <td>⚠️ מוגבלת</td>
+            </tr>
+            <tr>
+              <td>בידוד טרמי</td>
+              <td>❌ דורש תוספת</td>
+              <td>✅ טבעי</td>
+            </tr>
+            <tr>
+              <td>תוספת למבנה קיים</td>
+              <td>✅ אידיאלי</td>
+              <td>❌ בעייתי</td>
+            </tr>
+            <tr>
+              <td>מיחזור</td>
+              <td>✅ 100%</td>
+              <td>❌ קשה</td>
+            </tr>
+          </table>
+
+          <h3><i class="bi bi-check2-circle"></i> מתי לבחור בפלדה?</h3>
+          <ul>
+            <li><strong>תוספות בנייה למבנים קיימים</strong></li>
+            <li><strong>לוחות זמנים צפופים</strong></li>
+            <li><strong>חללים גדולים</strong> - אולמות, גלריות</li>
+            <li><strong>מבנים תעשייתיים</strong></li>
+            <li><strong>פרגולות וסככות</strong></li>
+          </ul>
+
+          <blockquote>
+            <p>בתוספות בנייה, פלדה היא כמעט תמיד הבחירה הנכונה. היכולת לסיים תוך שבועות, בלי משאבות בטון וסגירת רחוב, שווה הרבה.</p>
+            <cite>יונה לוי, מייסד מסגריית יונה</cite>
+          </blockquote>
+        `
+      },
+
+      // Article 5: Stair Safety
+      'stair-safety': {
+        id: 'stair-safety',
+        title: 'בטיחות במדרגות פלדה - תקנים ודרישות חובה',
+        shortTitle: 'בטיחות מדרגות',
+        date: '18 דצמבר 2025',
+        image: 'assets/img/projects/steel-stairs.jpg',
+        category: 'בטיחות',
+        tags: ['מדרגות', 'בטיחות', 'תקנים', 'מעקות'],
+        views: 1876,
+        content: `
+          <p>מדרגות הן מהגורמים המובילים לתאונות בית. התקנה נכונה לפי התקנים יכולה למנוע נפילות ולהציל חיים. הנה כל מה שחייבים לדעת.</p>
+
+          <h3><i class="bi bi-rulers"></i> מידות תקניות (לפי תקנות הבנייה)</h3>
+          <table class="comparison-table">
+            <tr>
+              <th>פרמטר</th>
+              <th>מינימום</th>
+              <th>מקסימום</th>
+              <th>מומלץ</th>
+            </tr>
+            <tr>
+              <td>גובה מדרגה</td>
+              <td>14 ס"מ</td>
+              <td>19 ס"מ</td>
+              <td>16-17 ס"מ</td>
+            </tr>
+            <tr>
+              <td>עומק מדרגה</td>
+              <td>26 ס"מ</td>
+              <td>40 ס"מ</td>
+              <td>28-30 ס"מ</td>
+            </tr>
+            <tr>
+              <td>רוחב מהלך</td>
+              <td>90 ס"מ</td>
+              <td>-</td>
+              <td>100-120 ס"מ</td>
+            </tr>
+            <tr>
+              <td>גובה מעקה</td>
+              <td>90 ס"מ</td>
+              <td>-</td>
+              <td>95-105 ס"מ</td>
+            </tr>
+          </table>
+
+          <div class="warning-box">
+            <h5><i class="bi bi-calculator-fill"></i> נוסחת הנוחות (בלונדל)</h5>
+            <p><strong>2×גובה + עומק = 60-65 ס"מ</strong><br>לדוגמה: 2×17 + 29 = 63 ס"מ ✓</p>
+          </div>
+
+          <h3><i class="bi bi-shield-check"></i> דרישות מעקה הבטיחות</h3>
+          
+          <h4>גובה המעקה</h4>
+          <ul>
+            <li><strong>מדרגות רגילות:</strong> 90 ס"מ לפחות</li>
+            <li><strong>גובה נפילה מעל 3 מ':</strong> 105 ס"מ</li>
+            <li><strong>מבני ציבור:</strong> 110 ס"מ מומלץ</li>
+          </ul>
+
+          <h4>מרווחים בין אלמנטים</h4>
+          <ul>
+            <li><strong>בין סורגים:</strong> עד 10 ס"מ (למניעת מעבר ילדים)</li>
+            <li><strong>מתחת למעקה:</strong> עד 5 ס"מ מפני המדרגה</li>
+            <li><strong>במוסדות חינוך:</strong> ללא אלמנטים אופקיים לטיפוס!</li>
+          </ul>
+
+          <div class="tip-box">
+            <h5><i class="bi bi-lightbulb-fill"></i> מעקה כפול</h5>
+            <p>במוסדות חינוך ובתי חולים מומלץ מעקה כפול - 90 ס"מ לילדים ו-110 ס"מ למבוגרים.</p>
+          </div>
+
+          <h3><i class="bi bi-droplet-fill"></i> משטחים מונעי החלקה</h3>
+          
+          <h4>אפשרויות למניעת החלקה:</h4>
+          <ul>
+            <li><strong>רשת מתכת מורחבת</strong> - ניקוז מעולה, מתאים לחוץ</li>
+            <li><strong>פלטות עם חריצים</strong> - מראה נקי, מתאים לפנים</li>
+            <li><strong>סרטי אנטי-סליפ</strong> - ניתן להוסיף למדרגות קיימות</li>
+          </ul>
+
+          <h3><i class="bi bi-person-exclamation"></i> מתי חייבים מומחה מוסמך?</h3>
+          <ul>
+            <li>מדרגות במבני ציבור</li>
+            <li>מדרגות חירום ומילוט</li>
+            <li>גובה נפילה מעל 3 מטר</li>
+            <li>מדרגות במוסדות חינוך</li>
+          </ul>
+
+          <blockquote>
+            <p>אנחנו לא מתפשרים על בטיחות. כל מדרגה עוברת בדיקה כפולה, וכל התקנה מלווה בבדיקת בטיחות סופית.</p>
+            <cite>צוות הייצור, מסגריית יונה</cite>
+          </blockquote>
+        `
+      },
+
+      // Article 6: Or Gaon Project
+      'or-gaon-project': {
+        id: 'or-gaon-project',
+        title: 'פרויקט אור גאון - 3 קומות פלדה בלי יום השבתה',
+        shortTitle: 'פרויקט אור גאון',
+        date: '10 דצמבר 2025',
+        image: 'assets/img/projects/אור_גאון.jpg',
+        category: 'פרויקטים',
+        tags: ['פרויקטים', 'קונסטרוקציה', 'תוספת בנייה', 'מוסדות'],
+        views: 3254,
+        content: `
+          <p>מוסדות אור גאון בבני ברק - אחד הפרויקטים המרשימים והמאתגרים שלנו. תוספת 3 קומות על מבנה קיים, תוך שמירה על פעילות רציפה. הנה הסיפור המלא.</p>
+
+          <h3><i class="bi bi-exclamation-triangle-fill"></i> האתגר</h3>
+          <p>המוסד פנה אלינו עם צורך דחוף: המבנה בן 4 הקומות כבר לא מספיק לכמות התלמידים הגדלה. הבעיה? אין קרקע פנויה בשכונה הצפופה.</p>
+          
+          <h4>האתגרים שעמדו בפנינו:</h4>
+          <ul>
+            <li><strong>מגבלת מקום</strong> - שכונה צפופה ללא קרקע פנויה</li>
+            <li><strong>פעילות רציפה</strong> - אי אפשר לסגור את המוסד לתקופה ארוכה</li>
+            <li><strong>עומסים</strong> - המבנה המקורי לא תוכנן לתוספת קומות</li>
+            <li><strong>לוח זמנים</strong> - לסיים לפני פתיחת שנת הלימודים</li>
+          </ul>
+
+          <div class="info-box">
+            <h5><i class="bi bi-lightbulb-fill"></i> למה פלדה הייתה הפתרון היחיד?</h5>
+            <p>בטון לא היה אפשרי - המשקל היה מחייב חיזוק יסודות יקר ומסובך, והזמן הדרוש היה ארוך מדי. פלדה הייתה הפתרון היחיד שענה על כל הדרישות.</p>
+          </div>
+
+          <h3><i class="bi bi-hammer"></i> הביצוע - שלב אחר שלב</h3>
+          
+          <h4>שלב 1: הכנה (שבוע 1)</h4>
+          <ul>
+            <li>הקמת מנוף הרכבה</li>
+            <li>גדרות בטיחות סביב אזור העבודה</li>
+            <li>תיאום עבודה בשעות שאינן מפריעות ללימודים</li>
+          </ul>
+
+          <h4>שלב 2: הרכבת השלד (שבועות 2-3)</h4>
+          <p>ההרכבה בוצעה בעיקר אחר הצהריים ובערב:</p>
+          <ul>
+            <li>יום 1-3: עמודים ראשיים</li>
+            <li>יום 4-7: קורות ראשיות</li>
+            <li>יום 8-12: רצפות פלדה</li>
+            <li>יום 13-14: בדיקות יציבות ובטיחות</li>
+          </ul>
+
+          <h4>שלב 3: גמר (שבועות 4-6)</h4>
+          <ul>
+            <li>יציקת רצפות בטון על השלד</li>
+            <li>קירות חוץ</li>
+            <li>חלונות ודלתות</li>
+            <li>אינסטלציה וחשמל</li>
+          </ul>
+
+          <div class="tip-box">
+            <h5><i class="bi bi-stopwatch-fill"></i> מהירות מדהימה</h5>
+            <p>שלד הפלדה של 3 הקומות (600 מ"ר כל קומה) הורכב תוך <strong>14 ימי עבודה</strong> בלבד!</p>
+          </div>
+
+          <h3><i class="bi bi-bar-chart-fill"></i> המספרים המרשימים</h3>
+          <table class="comparison-table">
+            <tr>
+              <th>פרמטר</th>
+              <th>נתון</th>
+            </tr>
+            <tr>
+              <td>שטח תוספת כולל</td>
+              <td>1,800 מ"ר</td>
+            </tr>
+            <tr>
+              <td>משקל קונסטרוקציה</td>
+              <td>85 טון פלדה</td>
+            </tr>
+            <tr>
+              <td>זמן הרכבת שלד</td>
+              <td>14 ימים</td>
+            </tr>
+            <tr>
+              <td>זמן פרויקט כולל</td>
+              <td>8 שבועות</td>
+            </tr>
+            <tr>
+              <td>ימי השבתה</td>
+              <td><strong>0 (אפס!)</strong></td>
+            </tr>
+          </table>
+
+          <h3><i class="bi bi-trophy-fill"></i> התוצאה המרשימה</h3>
+          <p>המוסד קיבל:</p>
+          <ul>
+            <li>18 כיתות לימוד חדשות ומרווחות</li>
+            <li>ספריה מודרנית</li>
+            <li>חדרי מנהלה ומורים</li>
+            <li>שירותים בכל קומה</li>
+          </ul>
+
+          <blockquote>
+            <p>לא האמנו שאפשר לבנות 3 קומות בלי לסגור את המוסד ליום אחד. מסגריית יונה הוכיחו שזה אפשרי. התלמידים המשיכו ללמוד בזמן שהבניין גדל מעליהם!</p>
+            <cite>הרב משה כהן, מנהל מוסדות אור גאון</cite>
+          </blockquote>
+
+          <div class="info-box">
+            <h5><i class="bi bi-telephone-fill"></i> יש לכם פרויקט דומה?</h5>
+            <p>אם גם אתם צריכים להרחיב מבנה קיים או לבנות בלוחות זמנים צפופים - <a href="contact.html" style="color: #004085; font-weight: 600;">דברו איתנו</a>. יש לנו הניסיון להפוך את הבלתי אפשרי לאפשרי.</p>
+          </div>
+        `
+      }
+    };
+
+    // ============================================
+    // PAGE FUNCTIONALITY
+    // ============================================
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const articleId = urlParams.get('id') || 'steel-types';
+
+    function loadArticle(id) {
+      const article = articles[id];
+      if (!article) {
+        document.getElementById('article-title').textContent = 'מאמר לא נמצא';
+        document.getElementById('article-content').innerHTML = '<p>המאמר המבוקש לא נמצא. <a href="blog.html">חזרו לבלוג</a></p>';
+        return;
+      }
+
+      // Update page elements
+      document.title = article.title + ' - מסגריית יונה';
+      document.getElementById('page-title').textContent = article.shortTitle;
+      document.getElementById('breadcrumb-title').textContent = article.shortTitle;
+      document.getElementById('article-title').textContent = article.title;
+      document.getElementById('article-date').textContent = article.date;
+      document.getElementById('article-image').src = article.image;
+      document.getElementById('article-image').alt = article.title;
+      document.getElementById('article-views').textContent = article.views.toLocaleString();
+      document.getElementById('article-category').textContent = article.category;
+      document.getElementById('article-content').innerHTML = article.content;
+
+      // Display tags
+      document.getElementById('article-tags-display').innerHTML = article.tags
+        .map(tag => `<a href="blog.html" class="badge bg-light text-dark text-decoration-none me-2">${tag}</a>`)
+        .join('');
+
+      // Load related and recent posts
+      loadRelatedPosts(id);
+      loadRecentPosts(id);
+    }
+
+    function loadRelatedPosts(currentId) {
+      const related = Object.values(articles).filter(a => a.id !== currentId).slice(0, 3);
+      document.getElementById('related-posts').innerHTML = related.map(article => `
+        <div class="col-md-4">
+          <div class="related-post-card">
+            <img src="${article.image}" alt="${article.title}">
+            <div class="card-body">
+              <h5><a href="blog-details.html?id=${article.id}">${article.shortTitle}</a></h5>
+              <small class="text-muted"><i class="bi bi-calendar3 me-1"></i>${article.date}</small>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function loadRecentPosts(currentId) {
+      const recent = Object.values(articles).filter(a => a.id !== currentId).slice(0, 4);
+      document.getElementById('recent-posts').innerHTML = recent.map(article => `
+        <div class="d-flex gap-3 mb-3 pb-3 border-bottom">
+          <img src="${article.image}" alt="${article.title}" style="width: 80px; height: 60px; object-fit: cover; border-radius: 8px;">
+          <div>
+            <h6 class="mb-1" style="font-size: 0.9rem;"><a href="blog-details.html?id=${article.id}" class="text-decoration-none">${article.shortTitle}</a></h6>
+            <small class="text-muted">${article.date}</small>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // Social sharing functions
+    function shareOnFacebook() {
+      window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400');
+    }
+    
+    function shareOnWhatsApp() {
+      const article = articles[articleId];
+      window.open(`https://wa.me/?text=${encodeURIComponent(article.title + '\n' + window.location.href)}`, '_blank');
+    }
+    
+    function shareOnTwitter() {
+      const article = articles[articleId];
+      window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(article.title)}&url=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400');
+    }
+    
+    function shareOnLinkedIn() {
+      window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(window.location.href)}`, '_blank', 'width=600,height=400');
+    }
+
+    // Initialize page
+    document.addEventListener('DOMContentLoaded', () => loadArticle(articleId));
+  </script>
+  
+  <!-- Enhanced Functionality -->
+  <script src="assets/js/enhancements.js"></script>
+
+</body>
+</html>

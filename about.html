@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>אודות - מסגריית יונה</title>
+  <meta name="description" content="מסגריית יונה - עבודות ברזל מקצועיות">
+  <meta name="keywords" content="מסגריה, עבודות ברזל, קונסטרוקציה">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: UpConstruction
+  * Template URL: https://bootstrapmade.com/upconstruction-bootstrap-construction-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+
+  <style>
+    @media screen and (min-width: 1024px) {
+      .our-story p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+      
+      .our-story h3 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+        font-weight: bold;
+      }
+      
+      .our-story h4 {
+        font-size: 1.8rem;
+        color: #666;
+        margin-bottom: 1rem;
+      }
+      
+      .our-story ul li {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+      }
+
+      .stats-item span {
+        font-size: 4rem !important;
+        font-weight: 700;
+      }
+
+      .stats-item p {
+        font-size: 1.4rem;
+      }
+      
+      .team .member {
+        max-width: 400px;
+        margin: 0 15px;
+      }
+    }
+
+    .team .row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .stats-counter .row {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+    }
+
+    .stats-item .color-green {
+      color: #28a745;
+    }
+    
+    .stats-item .color-purple {
+      color: #6f42c1;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .stats-item span {
+        font-size: 3.5rem !important;
+        font-weight: 700;
+      }
+
+      .stats-item p {
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+      }
+    }
+
+    .stats-counter .row {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .stats-item {
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .stats-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* About Section New Styles */
+    .about-content .section-title {
+      font-size: 2.5rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .about-content .lead-text {
+      font-size: 1.3rem;
+      color: #fff;
+      line-height: 1.8;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .about-box {
+      background: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+      text-align: center;
+      height: 100%;
+      transition: all 0.3s ease;
+      border: 1px solid #444;
+    }
+
+    .about-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+      border-color: #ff8c00;
+    }
+
+    .about-box i {
+      font-size: 3rem;
+      color: #ff8c00;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .about-box h4 {
+      font-size: 1.3rem;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .about-box p {
+      color: #fff;
+      font-size: 1rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .services-list h4 {
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .service-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ff8c00 0%, #ff6600 100%);
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .service-tag:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,140,0,0.4);
+    }
+
+    .service-tag i {
+      color: #fff;
+    }
+
+    /* Interactive Form Styles */
+    .interactive-form {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+      border: 1px solid #e0e0e0;
+    }
+
+    .interactive-form h3 {
+      font-size: 1.5rem !important;
+      color: #1a1a1a !important;
+      margin-bottom: 10px;
+      text-shadow: none !important;
+    }
+
+    .interactive-form h3:hover {
+      transform: none !important;
+    }
+
+    .interactive-form h3 i {
+      color: #ff8c00;
+      margin-left: 8px;
+    }
+
+    .interactive-form p {
+      color: #333 !important;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .interactive-form .form-label {
+      color: #1a1a1a !important;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .input-group-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-group-icon i {
+      position: absolute;
+      right: 15px;
+      color: #ff8c00;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .input-group-icon input,
+    .input-group-icon textarea {
+      padding-right: 50px !important;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      background: #fff;
+      color: #1a1a1a;
+      width: 100%;
+    }
+
+    .input-group-icon input::placeholder,
+    .input-group-icon textarea::placeholder {
+      color: #888;
+    }
+
+    .input-group-icon input:focus,
+    .input-group-icon textarea:focus {
+      border-color: #ff8c00;
+      box-shadow: 0 0 15px rgba(255,140,0,0.2);
+      background: #fff;
+    }
+
+    .input-group-icon:focus-within i {
+      color: #ff4500;
+      transform: scale(1.2);
+    }
+
+    .textarea-group {
+      align-items: flex-start;
+    }
+
+    .textarea-group i {
+      top: 15px;
+    }
+
+    .service-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .service-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 10px;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .service-option i {
+      font-size: 1.5rem;
+      color: #555;
+      margin-bottom: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .service-option span {
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .service-option:hover {
+      border-color: #ff8c00;
+      transform: translateY(-3px);
+    }
+
+    .service-option:hover i {
+      color: #ff8c00;
+    }
+
+    .service-option.selected {
+      background: linear-gradient(135deg, #ff8c00 0%, #ff6600 100%);
+      border-color: #ff6600;
+    }
+
+    .service-option.selected i,
+    .service-option.selected span {
+      color: #fff;
+    }
+
+    .submit-btn {
+      background: #ffffff !important;
+      color: #1a1a1a !important;
+      border: 2px solid #1a1a1a !important;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .submit-btn i {
+      margin-left: 8px;
+      color: #1a1a1a !important;
+    }
+
+    .submit-btn:hover {
+      background: #1a1a1a !important;
+      color: #fff !important;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+    }
+
+    .submit-btn:hover i {
+      color: #fff !important;
+    }
+
+    .sent-message i {
+      color: #28a745;
+      margin-left: 8px;
+    }
+
+    .get-started .content h3 {
+      font-size: 2rem;
+      color: #ff8c00;
+      margin-bottom: 20px;
+      text-shadow: none;
+    }
+
+    .get-started .content h3:hover {
+      transform: none;
+    }
+
+    .get-started .content h4 {
+      font-size: 1.2rem;
+      color: #1a1a1a !important;
+      line-height: 1.8;
+    }
+
+    .get-started .content p {
+      color: #333 !important;
+      font-size: 1rem;
+    }
+
+    .get-started {
+      background: #f8f9fa !important;
+    }
+
+    @media (max-width: 991px) {
+      .get-started .content {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .service-selector {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .interactive-form {
+        padding: 25px 20px;
+      }
+      
+      .interactive-form h3 {
+        font-size: 1.3rem !important;
+      }
+
+      .get-started .content h3 {
+        font-size: 1.6rem;
+      }
+
+      .get-started .content h4 {
+        font-size: 1rem;
+      }
+    }
+
+    /* Team Section Styles */
+    .team .member {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      transition: all 0.4s ease;
+    }
+
+    .team .member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    }
+
+    .team .member-img {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .team .member-img img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      object-position: top center;
+      transition: transform 0.5s ease;
+    }
+
+    .team .member:hover .member-img img {
+      transform: scale(1.05);
+    }
+
+    .team .member-img .social {
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      transition: all 0.4s ease;
+    }
+
+    .team .member:hover .member-img .social {
+      bottom: 0;
+    }
+
+    .team .member-img .social a {
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #ff8c00;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .team .member-img .social a:hover {
+      background: #fff;
+      color: #ff8c00;
+      transform: translateY(-5px);
+    }
+
+    .team .member-info {
+      padding: 25px 20px 30px;
+      background: #fff;
+    }
+
+    .team .member-info h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 8px;
+    }
+
+    .team .member-info span {
+      display: block;
+      font-size: 1rem;
+      color: #ff8c00;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .team .member-info p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .team .member-img img {
+        height: 300px;
+      }
+      
+      .team .member-img .social {
+        bottom: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      }
+    }
+  </style>
+</head>
+
+<body class="about-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo_light.svg" alt="Light Logo" class="logo-default">
+        <img src="assets/img/logo_dark.svg" alt="Dark Logo" class="logo-scrolled">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">דף הבית</a></li>
+          <li><a href="about.html" class="active">אודות</a></li>
+          <li><a href="index.html#projects">שירותים</a></li>
+          <li><a href="index.html#testimonials">פרויקטים</a></li>
+          <li><a href="blog.html">בלוג</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+    <!-- Hero Section with Video Background -->
+    <section id="hero" class="hero section dark-background">
+      <video autoplay muted loop playsinline poster="assets/img/fallback-poster.jpg" style="opacity: 0.3; position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        <source src="assets/vid/vid1.mp4" type="video/mp4">
+      </video>
+
+      <div class="info d-flex align-items-center">
+        <div class="container">
+          <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-6 text-center">
+              <h2>אודות מסגריית יונה</h2>
+              <h5>
+                מסגריית יונה - מובילים בתחום עבודות הברזל והמתכת מאז 2014.<br>
+                מחויבים למצוינות, חדשנות ושירות מקצועי ברמה הגבוהה ביותר.
+              </h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section" style="background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+            <div class="about-content text-center">
+              <h2 class="section-title">הסיפור שלנו</h2>
+              <p class="lead-text">מסגריית יונה הוקמה בשנת 2014 על ידי יונה לוי, עם חזון ברור - להביא חדשנות לתחום הבנייה והקונסטרוקציה בישראל.</p>
+            </div>
+            
+            <div class="row gy-4 mt-5">
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="about-box">
+                  <i class="bi bi-bullseye"></i>
+                  <h4>החזון שלנו</h4>
+                  <p>קיצור תהליך הבנייה באמצעות יבוא טכנולוגיות בנייה מתקדמות מארה"ב, תוך שמירה על איכות ללא פשרות.</p>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="about-box">
+                  <i class="bi bi-gear-wide-connected"></i>
+                  <h4>ההתמחות שלנו</h4>
+                  <p>בניית סככות למחסנים ולתעשייה מפלדה, שירות מקיף משלב התכנון ועד למסירת שלד מוכן.</p>
+                </div>
+              </div>
+              <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="about-box">
+                  <i class="bi bi-lightning-charge"></i>
+                  <h4>היתרון שלנו</h4>
+                  <p>זמני ביצוע מהירים ביותר, ליווי אישי לכל פרויקט ושירות מותאם לצורכי הלקוח.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="services-list mt-5" data-aos="fade-up" data-aos-delay="400">
+              <div class="row justify-content-center">
+                <div class="col-md-8">
+                  <h4 class="text-center mb-4">תחומי ההתמחות שלנו</h4>
+                  <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <span class="service-tag"><i class="bi bi-check-circle-fill"></i> עבודות קונסטרוקציה</span>
+                    <span class="service-tag"><i class="bi bi-check-circle-fill"></i> חיזוק מבנים</span>
+                    <span class="service-tag"><i class="bi bi-check-circle-fill"></i> בנייה קלה</span>
+                    <span class="service-tag"><i class="bi bi-check-circle-fill"></i> סככות ומחסנים</span>
+                    <span class="service-tag"><i class="bi bi-check-circle-fill"></i> מבני תעשייה</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Counter Section -->
+    <section id="stats-counter" class="stats-counter section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>הישגים</h2>
+        <p>המספרים מדברים בעד עצמם</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-emoji-smile color-blue flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="250" data-purecounter-duration="1" class="purecounter"></span>
+                <p>לקוחות מרוצים</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-journal-richtext color-orange flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="500" data-purecounter-duration="1" class="purecounter"></span>
+                <p>פרויקטים שהושלמו</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-building color-green flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1" class="purecounter"></span>
+                <p>חוזים ממשלתיים</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <div class="stats-item d-flex align-items-center w-100 h-100">
+              <i class="bi bi-clock-history color-purple flex-shrink-0"></i>
+              <div>
+                <span data-purecounter-start="0" data-purecounter-end="95" data-purecounter-duration="1" class="purecounter"></span>
+                <p>אחוז עמידה בלו"ז</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>הצוות המוביל שלנו</h2>
+        <p>האנשים שמאחורי ההצלחה</p>
+      </div>
+
+      <div class="container">
+        <div class="row justify-content-center gy-5">
+          <div class="col-lg-5 col-md-6 member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-img">
+              <img src="assets/img/team/yona.png" class="img-fluid" alt="יונה לוי">
+              <div class="social">
+                <a href="tel:0542666568" title="התקשרו אלינו"><i class="bi bi-telephone-fill"></i></a>
+                <a href="https://wa.me/972542666568" title="שלחו הודעה בוואטסאפ"><i class="bi bi-whatsapp"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>יונה לוי</h4>
+              <span>מייסד ומנכ"ל</span>
+              <p>מוביל את מסגריית יונה מאז הקמתה בשנת 2014. בעל חזון לחדשנות בתחום הבנייה והקונסטרוקציה.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-5 col-md-6 member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-img">
+              <img src="assets/img/team/אלעד.png" class="img-fluid" alt="אלעד ודאי">
+              <div class="social">
+                <a href="tel:0542666568" title="התקשרו אלינו"><i class="bi bi-telephone-fill"></i></a>
+                <a href="https://wa.me/972542666568" title="שלחו הודעה בוואטסאפ"><i class="bi bi-whatsapp"></i></a>
+              </div>
+            </div>
+            <div class="member-info text-center">
+              <h4>אלעד ודאי</h4>
+              <span>מנהל תפעול ופרויקטים</span>
+              <p>אחראי על ניהול הפרויקטים והתפעול השוטף. מלווה כל פרויקט מהתכנון ועד למסירה.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="get-started" class="get-started section">
+      <div class="container">
+        <div class="row justify-content-between gy-4">
+          <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="100">
+            <div class="content text-center">
+              <h3>הצעת מחיר ויצירת קשר</h3>
+              <h4>
+                מחפשים פתרונות פלדה איכותיים ומקצועיים?<br>
+                אנחנו כאן כדי לספק לכם את השירות הטוב ביותר.
+              </h4>
+              <p class="mt-3">
+                צרו איתנו קשר עוד היום ונשמח לספק לכם הצעת מחיר מותאמת אישית, ללא התחייבות.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-5" data-aos="zoom-out" data-aos-delay="200">
+            <form action="forms/quote.php" method="post" class="php-email-form interactive-form">
+              <h3><i class="bi bi-envelope-paper-heart"></i> השאירו פרטים</h3>
+              <p>מלאו את הטופס ונחזור אליכם בהקדם</p>
+              <div class="row gy-3">
+                <div class="col-12">
+                  <div class="input-group-icon">
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" name="name" class="form-control" placeholder="שם מלא" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="input-group-icon">
+                    <i class="bi bi-telephone-fill"></i>
+                    <input type="text" class="form-control" name="phone" placeholder="מספר טלפון" required>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label">
+                    <i class="bi bi-gear-wide-connected"></i> סוג השירות
+                  </label>
+                  <div class="service-selector">
+                    <div class="service-option" data-value="קונסטרוקציה">
+                      <i class="bi bi-building"></i>
+                      <span>קונסטרוקציה</span>
+                    </div>
+                    <div class="service-option" data-value="סככות ומחסנים">
+                      <i class="bi bi-house"></i>
+                      <span>סככות</span>
+                    </div>
+                    <div class="service-option" data-value="אחר">
+                      <i class="bi bi-three-dots"></i>
+                      <span>אחר</span>
+                    </div>
+                  </div>
+                  <input type="hidden" name="service_type" id="service_type_about" value="">
+                </div>
+                <div class="col-12">
+                  <div class="input-group-icon textarea-group">
+                    <i class="bi bi-chat-dots-fill"></i>
+                    <textarea class="form-control" name="message" rows="3" placeholder="ספרו לנו על הפרויקט..." required></textarea>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <div class="loading">טוען...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message"><i class="bi bi-check-circle-fill"></i> הבקשה נשלחה בהצלחה!</div>
+                  <button type="submit" class="submit-btn">
+                    <i class="bi bi-send-fill"></i> קבלו הצעת מחיר
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="assets/img/gear.svg" alt="Loading Gear" style="width: 80px; height: 80px; animation: rotate-gear 1.5s linear infinite;">
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Add the component loader script -->
+  <script src="assets/js/loadComponents.js"></script>
+
+  <!-- Interactive Form Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Service selector
+      const serviceOptions = document.querySelectorAll('.service-option');
+      const serviceInput = document.getElementById('service_type_about');
+      
+      serviceOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          serviceOptions.forEach(opt => opt.classList.remove('selected'));
+          this.classList.add('selected');
+          if (serviceInput) serviceInput.value = this.dataset.value;
+        });
+      });
+
+      // Add floating animation to icons on focus
+      const inputGroups = document.querySelectorAll('.input-group-icon');
+      inputGroups.forEach(group => {
+        const input = group.querySelector('input, textarea');
+        const icon = group.querySelector('i');
+        
+        if (input && icon) {
+          input.addEventListener('focus', () => {
+            icon.style.transform = 'scale(1.2)';
+          });
+          input.addEventListener('blur', () => {
+            icon.style.transform = '';
+          });
+        }
+      });
+    });
+  </script>
+  
+  <!-- Enhanced Functionality -->
+  <script src="assets/js/enhancements.js"></script>
+
+</body>
+</html>

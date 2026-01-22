@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הגדרת התראות WhatsApp - מסגריית יונה</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: #333;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+    
+    .header p {
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+    
+    .whatsapp-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+    
+    .content {
+      padding: 30px;
+    }
+    
+    .step {
+      background: #f8f9fa;
+      border-radius: 15px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-right: 5px solid #25D366;
+    }
+    
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-weight: bold;
+      font-size: 1.2rem;
+      margin-left: 15px;
+    }
+    
+    .step h3 {
+      display: inline;
+      font-size: 1.1rem;
+      color: #1a1a2e;
+    }
+    
+    .step p {
+      margin-top: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+    
+    .phone-number {
+      display: block;
+      background: #e8f5e9;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #128C7E;
+      text-align: center;
+      margin: 15px 0;
+      direction: ltr;
+      letter-spacing: 2px;
+    }
+    
+    .message-box {
+      background: #fff3e0;
+      border: 2px dashed #ff9800;
+      padding: 15px 20px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1.1rem;
+      text-align: center;
+      margin: 15px 0;
+      direction: ltr;
+    }
+    
+    .copy-btn {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background: #25D366;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: all 0.3s;
+    }
+    
+    .copy-btn:hover {
+      background: #128C7E;
+      transform: scale(1.02);
+    }
+    
+    .copy-btn:active {
+      transform: scale(0.98);
+    }
+    
+    .warning {
+      background: #fff8e1;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 20px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    
+    .warning-icon {
+      font-size: 24px;
+    }
+    
+    .result-section {
+      background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+      border-radius: 15px;
+      padding: 25px;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .result-section h3 {
+      color: #1565c0;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .result-section p {
+      color: #555;
+      margin-bottom: 15px;
+    }
+    
+    .api-key-example {
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-family: monospace;
+      font-size: 1.3rem;
+      color: #1565c0;
+      direction: ltr;
+    }
+    
+    .footer {
+      background: #f5f5f5;
+      padding: 20px;
+      text-align: center;
+      color: #666;
+    }
+    
+    .footer a {
+      color: #25D366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
+    .benefits {
+      background: #e8f5e9;
+      border-radius: 15px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    
+    .benefits h3 {
+      color: #2e7d32;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+    
+    .benefits ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .benefits li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .benefits li::before {
+      content: "✅";
+    }
+    
+    @media (max-width: 500px) {
+      .header h1 {
+        font-size: 1.4rem;
+      }
+      
+      .phone-number {
+        font-size: 1.1rem;
+      }
+      
+      .content {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="whatsapp-icon">📱</div>
+      <h1>הגדרת התראות WhatsApp</h1>
+      <p>קבל הודעה בכל פעם שלקוח שולח בקשה באתר!</p>
+    </div>
+    
+    <div class="content">
+      <div class="step">
+        <span class="step-number">1</span>
+        <h3>שמור את המספר הזה באנשי הקשר</h3>
+        <p>הוסף את המספר הבא לאנשי הקשר בטלפון שלך:</p>
+        <span class="phone-number">+34 644 51 95 23</span>
+        <button class="copy-btn" onclick="copyPhone()">📋 העתק מספר</button>
+      </div>
+      
+      <div class="step">
+        <span class="step-number">2</span>
+        <h3>שלח הודעה ב-WhatsApp</h3>
+        <p>פתח את WhatsApp, מצא את המספר ששמרת, ושלח לו בדיוק את ההודעה הזו:</p>
+        <div class="message-box">I allow callmebot to send me messages</div>
+        <button class="copy-btn" onclick="copyMessage()">📋 העתק הודעה</button>
+      </div>
+      
+      <div class="step">
+        <span class="step-number">3</span>
+        <h3>המתן לתשובה</h3>
+        <p>תוך כמה שניות תקבל הודעה חזרה עם <strong>API Key</strong> - זה מספר שנראה כך:</p>
+        <div class="api-key-example">Your API Key is: <strong>1234567</strong></div>
+      </div>
+      
+      <div class="result-section">
+        <h3>🎉 שלב אחרון - שלח לי את המפתח!</h3>
+        <p>העתק את המספר שקיבלת (ה-API Key) ושלח לי אותו ב-WhatsApp או באימייל:</p>
+        <p style="font-size: 1.2rem; color: #1565c0; font-weight: bold;">
+          📞 054-2666568<br>
+          📧 0542666568vc@gmail.com
+        </p>
+      </div>
+      
+      <div class="warning">
+        <span class="warning-icon">💡</span>
+        <div>
+          <strong>טיפ:</strong> השירות הזה חינמי לגמרי! 
+          אחרי שתשלח לי את המפתח, בכל פעם שלקוח ישלח בקשה דרך האתר - תקבל הודעת WhatsApp מיידית עם כל הפרטים.
+        </div>
+      </div>
+      
+      <div class="benefits">
+        <h3>מה תקבל?</h3>
+        <ul>
+          <li>הודעה מיידית על כל בקשת הצעת מחיר</li>
+          <li>שם הלקוח, טלפון ואימייל</li>
+          <li>סוג השירות המבוקש</li>
+          <li>פרטים נוספים שהלקוח כתב</li>
+          <li>תאריך ושעה של הבקשה</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <p>צריך עזרה? התקשר: <a href="tel:0542666568">054-2666568</a></p>
+    </div>
+  </div>
+  
+  <script>
+    function copyPhone() {
+      navigator.clipboard.writeText('+34644519523').then(() => {
+        alert('המספר הועתק! 📋\n\nעכשיו הוסף אותו לאנשי הקשר בטלפון');
+      });
+    }
+    
+    function copyMessage() {
+      navigator.clipboard.writeText('I allow callmebot to send me messages').then(() => {
+        alert('ההודעה הועתקה! 📋\n\nעכשיו פתח WhatsApp ושלח את ההודעה למספר ששמרת');
+      });
+    }
+  </script>
+</body>
+</html>

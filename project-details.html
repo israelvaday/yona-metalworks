@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>פרטי פרויקט - מסגריית יונה</title>
+  <meta name="description" content="פרטי פרויקט - מסגריית יונה לוי">
+  <meta name="keywords" content="מסגריה, עבודות ברזל, פרויקטים">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    .project-detail-hero {
+      background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), var(--hero-bg);
+      background-size: cover;
+      background-position: center;
+      min-height: 55vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+    
+    .project-detail-hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7);
+    }
+    
+    .project-detail-hero p {
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+      font-size: 1.2rem;
+    }
+    
+    .project-badge {
+      display: inline-block;
+      background: var(--accent-color);
+      color: #fff;
+      padding: 8px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    .project-content {
+      padding: 60px 0;
+      background: #ffffff !important;
+    }
+    
+    .project-info {
+      background: #ffffff;
+    }
+    
+    .project-main-image {
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      margin-bottom: 30px;
+      border: 3px solid #ddd;
+    }
+    
+    @media (min-width: 992px) {
+      .project-main-image {
+        height: 450px;
+      }
+    }
+    
+    .project-info h2 {
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+    
+    .project-info p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333333 !important;
+      background: transparent;
+    }
+    
+    .project-details-box {
+      background: #f8f9fa !important;
+      padding: 30px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+    }
+    
+    .project-details-box h4 {
+      color: var(--accent-color);
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    
+    .detail-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .detail-item:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    
+    .detail-item i {
+      color: var(--accent-color);
+      font-size: 1.3rem;
+      margin-left: 15px;
+      width: 25px;
+    }
+    
+    .detail-item .label {
+      font-weight: 600;
+      color: #333;
+      min-width: 100px;
+    }
+    
+    .detail-item .value {
+      color: #555;
+    }
+    
+    .project-features {
+      background: #f8f9fa !important;
+      padding: 40px;
+      border-radius: 15px;
+      margin-top: 30px;
+    }
+    
+    .project-features h3 {
+      color: #1a1a1a !important;
+      margin-bottom: 25px;
+    }
+    
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 15px;
+    }
+    
+    .feature-item i {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+      margin-left: 15px;
+      flex-shrink: 0;
+    }
+    
+    .feature-item span {
+      font-size: 1rem;
+      color: #333333 !important;
+    }
+    
+    /* Gallery Section */
+    .project-gallery {
+      padding: 60px 0;
+      background: #f8f9fa;
+    }
+    
+    .project-gallery h3 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1a1a1a !important;
+      font-weight: 700;
+    }
+    
+    .gallery-item {
+      margin-bottom: 20px;
+      overflow: hidden;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+      display: block;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.02);
+    }
+    
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    /* Timeline Section */
+    .project-timeline {
+      padding: 60px 0;
+      background: #fff;
+    }
+    
+    .project-timeline h3 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1a1a1a !important;
+      font-weight: 700;
+    }
+    
+    .timeline {
+      position: relative;
+      padding: 20px 0;
+    }
+    
+    .timeline::before {
+      content: '';
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+      width: 4px;
+      height: 100%;
+      background: var(--accent-color);
+    }
+    
+    .timeline-item {
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .timeline-content {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 15px;
+      width: 45%;
+      position: relative;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content {
+      margin-right: auto;
+      margin-left: 55%;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content {
+      margin-left: auto;
+      margin-right: 55%;
+    }
+    
+    .timeline-content::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      width: 20px;
+      height: 20px;
+      background: var(--accent-color);
+      border-radius: 50%;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-content::before {
+      right: calc(100% + 30px);
+    }
+    
+    .timeline-item:nth-child(even) .timeline-content::before {
+      left: calc(100% + 30px);
+    }
+    
+    .timeline-content h4 {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+    
+    .timeline-content p {
+      color: #555;
+      margin-bottom: 0;
+    }
+    
+    /* Stats Section */
+    .project-stats {
+      background: #1a1a1a;
+      padding: 50px 0;
+    }
+    
+    .stat-item {
+      text-align: center;
+      padding: 20px;
+    }
+    
+    .stat-item .number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent-color);
+    }
+    
+    .stat-item .label {
+      color: #fff;
+      font-size: 1.1rem;
+    }
+    
+    .cta-section {
+      background: var(--accent-color);
+      padding: 60px 0;
+      text-align: center;
+      color: white;
+    }
+    
+    .cta-section h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .cta-section p {
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    .cta-section .btn {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: 2px solid #1a1a1a;
+      border-radius: 50px;
+      transition: all 0.3s;
+    }
+    
+    .cta-section .btn:hover {
+      background: #fff;
+      color: #1a1a1a;
+      border-color: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    }
+    
+    .related-projects {
+      padding: 60px 0;
+      background: #f8f9fa !important;
+    }
+    
+    .related-projects h3 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: #1a1a1a !important;
+      font-weight: 700;
+    }
+    
+    .related-project-card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .related-project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    .related-project-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .related-project-card .card-body {
+      padding: 20px;
+    }
+    
+    .related-project-card h5 {
+      color: #1a1a1a;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+    
+    .related-project-card p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    /* Mobile Responsive */
+    @media (max-width: 991px) {
+      .project-detail-hero h1 {
+        font-size: 2.2rem;
+      }
+      .project-content {
+        padding: 40px 0;
+      }
+      .timeline::before {
+        right: 20px;
+      }
+      .timeline-content {
+        width: calc(100% - 60px);
+        margin-right: 60px !important;
+        margin-left: 0 !important;
+      }
+      .timeline-item:nth-child(odd) .timeline-content::before,
+      .timeline-item:nth-child(even) .timeline-content::before {
+        right: calc(100% + 20px);
+        left: auto;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .project-detail-hero {
+        min-height: 40vh;
+        padding: 20px;
+      }
+      .project-detail-hero h1 {
+        font-size: 1.8rem;
+      }
+      .project-detail-hero p {
+        font-size: 1rem;
+      }
+      .project-features {
+        padding: 25px;
+        margin-top: 20px;
+      }
+      .stat-item .number {
+        font-size: 2rem;
+      }
+      .gallery-item img {
+        height: 200px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .project-detail-hero h1 {
+        font-size: 1.5rem;
+      }
+      .project-info h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="project-details-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo_dark.svg" alt="מסגריית יונה לוי">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">בית</a></li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="index.html#projects">שירותים</a></li>
+          <li><a href="index.html#testimonials" class="active">פרויקטים</a></li>
+          <li><a href="blog.html">בלוג</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Project Hero -->
+    <section id="project-hero" class="project-detail-hero" style="margin-top: 70px;">
+      <div class="container">
+        <span class="project-badge" id="project-category">טוען...</span>
+        <h1 id="project-title">טוען...</h1>
+        <p id="project-subtitle" class="lead mt-3"></p>
+      </div>
+    </section>
+
+    <!-- Project Stats -->
+    <section class="project-stats" id="project-stats-section">
+      <div class="container">
+        <div class="row" id="stats-container">
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Content -->
+    <section class="project-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-left">
+            <img id="project-image" src="" alt="" class="project-main-image">
+            
+            <!-- Project Details Box -->
+            <div class="project-details-box">
+              <h4><i class="bi bi-info-circle-fill"></i> פרטי הפרויקט</h4>
+              <div id="project-details-list">
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 project-info" data-aos="fade-right">
+            <h2 id="project-heading">אודות הפרויקט</h2>
+            <p id="project-description"></p>
+            
+            <!-- Blog Article Link -->
+            <div id="blog-article-link" style="display: none; margin: 20px 0;">
+              <a id="blog-article-btn" href="#" class="btn" style="background: linear-gradient(135deg, #c9302c 0%, #a02622 100%); color: white; font-weight: 600; padding: 12px 24px; border-radius: 10px; box-shadow: 0 4px 15px rgba(201, 48, 44, 0.3); text-decoration: none;">
+                <i class="bi bi-newspaper me-2"></i> קרא את הסיפור המלא בבלוג
+              </a>
+            </div>
+            
+            <div class="project-features">
+              <h3><i class="bi bi-gear-fill"></i> עבודות שבוצעו בפרויקט</h3>
+              <div id="project-features-list">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Timeline -->
+    <section class="project-timeline" id="timeline-section">
+      <div class="container">
+        <h3>שלבי הפרויקט</h3>
+        <div class="timeline" id="timeline-container">
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Gallery -->
+    <section class="project-gallery" id="gallery-section">
+      <div class="container">
+        <h3>גלריית תמונות</h3>
+        <div class="row" id="gallery-container">
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <h3>רוצים לדבר על הפרויקט שלכם?</h3>
+        <p class="mb-4">הצוות שלנו ישמח לשמוע על האתגר הבא שלכם</p>
+        <a href="contact.html" class="btn">צרו קשר עכשיו</a>
+      </div>
+    </section>
+
+    <!-- Related Projects -->
+    <section class="related-projects">
+      <div class="container">
+        <h3>פרויקטים נוספים</h3>
+        <div class="row" id="related-projects-container">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- Project Details Data & Logic -->
+  <script>
+    const projectsData = {
+      // ========== קירות טיפוס מודיעין ==========
+      'climbing-walls-modiin': {
+        title: 'קירות טיפוס מודיעין קאנטרי קלאב',
+        subtitle: 'פרויקט ייחודי של קירות טיפוס מקצועיים במרכז הספורט המוביל של מודיעין',
+        category: 'פרויקט ספורט ופנאי',
+        image: 'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/project_face.jpg',
+        description: `פרויקט קירות הטיפוס במודיעין קאנטרי קלאב הוא אחד הפרויקטים המרשימים שביצענו בתחום מתקני הספורט. 
+        
+הפרויקט כלל תכנון, ייצור והתקנה של מערכת קירות טיפוס מודולרית בגובה 12 מטרים, המותאמת לכל רמות המטפסים - מילדים ומתחילים ועד מטפסים מקצועיים.
+
+הקירות עוצבו בשיתוף עם מאמני טיפוס מקצועיים כדי להבטיח מגוון מסלולים בדרגות קושי שונות. המערכת כוללת מסלולי בולדרינג, קירות אנכיים וקירות עם שיפוע שלילי לאתגר מרבי.
+
+הקונסטרוקציה כולה יוצרה ממתכת מגולוונת בציפוי אפוקסי עמיד, המבטיחה אורך חיים ארוך ועמידות בתנאי מזג אוויר משתנים.
+
+קירות הטיפוס עומדים בתקני הבטיחות האירופיים EN 12572 ומספקים חווית טיפוס בטוחה ומאתגרת לכל הגילאים.`,
+        details: {
+          client: 'הרשות לפיתוח כלכלי מודיעין',
+          contractor: 'מסגריית יונה לוי',
+          funding: 'מינהל מקרקעי ישראל',
+          location: 'מודיעין-מכבים-רעות',
+          year: '2024',
+          duration: '4 חודשים',
+          area: '450 מ"ר'
+        },
+        features: [
+          'קונסטרוקציית פלדה מגולוונת בציפוי אפוקסי',
+          'קירות בגובה 12 מטר',
+          'מערכת אחיזות מודולרית להחלפה קלה',
+          'מסלולי בולדרינג לכל רמות הקושי',
+          'מערכת בטיחות כולל נקודות עיגון לחבלים',
+          'תאורת LED משולבת לשימוש ערב',
+          'ריפוד בטיחות בתחתית הקירות',
+          'עמידה בתקן EN 12572'
+        ],
+        stats: [
+          { number: '12', label: 'מטר גובה' },
+          { number: '450', label: 'מ"ר שטח' },
+          { number: '25', label: 'מסלולי טיפוס' },
+          { number: '4', label: 'חודשי עבודה' }
+        ],
+        timeline: [
+          { phase: 'תכנון ואישורים', description: 'תכנון הנדסי מפורט, קבלת אישורי בטיחות מהרשויות ותיאום עם מומחי טיפוס מקצועיים' },
+          { phase: 'ייצור במפעל', description: 'ייצור הקונסטרוקציה והפאנלים במפעל תוך בקרת איכות קפדנית' },
+          { phase: 'הובלה והתקנה', description: 'הובלת הציוד לאתר והתקנה על ידי צוות מקצועי' },
+          { phase: 'בדיקות ומסירה', description: 'בדיקות בטיחות, התקנת אחיזות, הדרכת צוות ומסירה' }
+        ],
+        gallery: [
+          'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/PHOTO-2025-01-24-02-36-35.jpg',
+          'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/PHOTO-2025-01-24-02-36-36.jpg',
+          'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/PHOTO-2025-01-24-02-36-37.jpg',
+          'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/PHOTO-2025-01-24-02-36-38.jpg',
+          'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/PHOTO-2025-01-24-02-36-39.jpg',
+          'פרוייקטים/קירות טיפוס מודיעיו קאנטרי קלאב/PHOTO-2025-01-24-02-36-40.jpg'
+        ]
+      },
+
+      // ========== מוסדות אור גאון ==========
+      'or-gaon-institutions': {
+        title: 'מוסדות אור גאון - בני ברק',
+        subtitle: 'תוספת 3 קומות פלדה והרחבת מבנה קיים - פרויקט בנייה מורכב במרכז העיר',
+        category: 'פרויקט מוסדי',
+        image: 'assets/img/projects/אור_גאון.jpg',
+        blogArticle: 'blog-details.html?id=or-gaon-project',
+        description: `פרויקט הרחבת מוסדות אור גאון בבני ברק הוא אחד הפרויקטים המאתגרים והמרשימים שביצענו. הפרויקט כלל תוספת של שלוש קומות פלדה על גבי מבנה בטון קיים, תוך שמירה על פעילות שוטפת של המוסד.
+
+האתגר המרכזי היה ביצוע עבודות הקונסטרוקציה מעל מבנה פעיל עם מאות תלמידים, תוך הקפדה על בטיחות מרבית ומזעור הפרעות.
+
+הפתרון ההנדסי כלל תכנון קונסטרוקציית פלדה קלה יחסית אך חזקה במיוחד, שהועברה ללא צורך בחיזוק היסודות הקיימים. כל החיבורים תוכננו כך שניתן להרכיב אותם במהירות ובשקט יחסי.
+
+הפרויקט הושלם בהצלחה תוך עמידה בלוחות הזמנים ובתקציב, והפך לאחד מפרויקטי הדגל שלנו בתחום הבנייה המוסדית.
+
+הקונסטרוקציה עומדת בתקן הישראלי ת"י 413 לעמידות מבנים ברעידות אדמה.`,
+        details: {
+          architect: 'שרה זרביב - אדריכלות',
+          engineer: 'פרץ מהנדסים',
+          supervision: 'מוטי חסידה',
+          location: 'בני ברק',
+          year: '2023',
+          duration: '8 חודשים',
+          floors: '3 קומות'
+        },
+        features: [
+          'תוספת 3 קומות על מבנה קיים',
+          'קונסטרוקציית פלדה קלה ועמידה',
+          'מדרגות פלדה חיצוניות',
+          'מעקות בטיחות לכל הקומות',
+          'מערכת ניקוז משולבת',
+          'עמידה בתקן רעידות אדמה ת"י 413',
+          'ביצוע ללא הפרעה לפעילות המוסד',
+          'גמר בציפוי אבקתי עמיד'
+        ],
+        stats: [
+          { number: '3', label: 'קומות נוספות' },
+          { number: '1,200', label: 'מ"ר שטח' },
+          { number: '85', label: 'טון פלדה' },
+          { number: '8', label: 'חודשי עבודה' }
+        ],
+        timeline: [
+          { phase: 'סקר הנדסי', description: 'בדיקת המבנה הקיים, תכנון הקונסטרוקציה החדשה וקבלת אישורים' },
+          { phase: 'ייצור במפעל', description: 'ייצור כל רכיבי הפלדה במפעל עם בקרת איכות מלאה' },
+          { phase: 'הקמת שלד', description: 'הרכבת הקונסטרוקציה הראשית בשעות מופחתות פעילות' },
+          { phase: 'גמר ומסירה', description: 'השלמת פרטים, בדיקות בטיחות ומסירה ללקוח' }
+        ],
+        gallery: [
+          'פרוייקטים/מוסדות אור גאון /2018-09-14.jpg',
+          'פרוייקטים/מוסדות אור גאון /20200929_102413-scaled.jpg',
+          'פרוייקטים/מוסדות אור גאון /DJI_0013.jpg',
+          'פרוייקטים/מוסדות אור גאון /PHOTO-2025-01-24-06-26-04.jpg',
+          'פרוייקטים/מוסדות אור גאון /PHOTO-2025-01-24-06-34-26.jpg'
+        ]
+      },
+
+      // ========== מתחם שרונה ==========
+      'sarona-complex': {
+        title: 'הזזת המבנים במתחם שרונה',
+        subtitle: 'פרויקט ייחודי של הזזת מבנים היסטוריים במתחם שרונה תל אביב',
+        category: 'פרויקט שימור ושחזור',
+        image: 'assets/img/projects/sarona_build.jpg',
+        description: `פרויקט הזזת המבנים ההיסטוריים במתחם שרונה היה אחד הפרויקטים המורכבים והייחודיים ביותר שבוצעו בישראל בתחום השימור.
+
+מתחם שרונה, שהוקם בשנת 1871 כמושבה טמפלרית גרמנית, הפך לאחד מהאתרים האהובים בתל אביב. כחלק מפרויקט הפיתוח של המתחם, נדרש להזיז מספר מבנים היסטוריים ממקומם המקורי תוך שמירה מלאה על השלמות שלהם.
+
+מסגריית יונה לוי הייתה אחראית על תכנון וייצור מערכת הפלדה שאיפשרה את הזזת המבנים. המערכת כללה קונסטרוקציית תמיכה זמנית, מערכת מסילות מיוחדת ומערכת הידראולית להזזה מבוקרת.
+
+הפרויקט דרש תיאום מלא עם רשות העתיקות, אדריכלי שימור ומהנדסי קונסטרוקציה מהמובילים בישראל.
+
+זהו אחד הפרויקטים הראשונים מסוגם בישראל, שהוכיח כי ניתן לשלב פיתוח עירוני עם שימור מורשת.`,
+        details: {
+          architect: 'אמנון בר-אור',
+          contractor: 'סולל בונה',
+          client: 'הרשות לפיתוח כלכלי תל אביב',
+          location: 'מתחם שרונה, תל אביב',
+          year: '2014',
+          duration: '14 חודשים',
+          buildings: '5 מבנים'
+        },
+        features: [
+          'הזזת 5 מבנים היסטוריים',
+          'קונסטרוקציית תמיכה זמנית',
+          'מערכת מסילות מיוחדת',
+          'מערכת הידראולית להזזה מבוקרת',
+          'שימור מלא של המבנים המקוריים',
+          'תיאום עם רשות העתיקות',
+          'פרויקט ראשון מסוגו בישראל',
+          'זכה בפרס שימור ארצי'
+        ],
+        stats: [
+          { number: '5', label: 'מבנים הוזזו' },
+          { number: '120', label: 'מטר מרחק' },
+          { number: '500', label: 'טון פלדה' },
+          { number: '14', label: 'חודשי עבודה' }
+        ],
+        timeline: [
+          { phase: 'תכנון ואישורים', description: 'תכנון הנדסי מפורט, קבלת אישורי רשות העתיקות ומועצת השימור' },
+          { phase: 'הכנת תשתית', description: 'בניית מערכת המסילות והתשתית להזזה' },
+          { phase: 'הזזת המבנים', description: 'הזזה הדרגתית של כל מבנה למיקומו החדש בקצב של 10 מטר ביום' },
+          { phase: 'שיקום וגמר', description: 'שיקום המבנים, חיבור לתשתיות והשלמת עבודות הגמר' }
+        ],
+        gallery: [
+          'assets/img/projects/sarona_build.jpg'
+        ]
+      }
+    };
+
+    // Get project from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const projectId = urlParams.get('project');
+    
+    function loadProject(id) {
+      const project = projectsData[id];
+      
+      if (!project) {
+        document.getElementById('project-title').textContent = 'הפרויקט לא נמצא';
+        document.getElementById('project-subtitle').textContent = 'אנא בחרו פרויקט מהרשימה';
+        return;
+      }
+      
+      // Update hero section
+      document.getElementById('project-category').textContent = project.category;
+      document.getElementById('project-title').textContent = project.title;
+      document.getElementById('project-subtitle').textContent = project.subtitle;
+      document.querySelector('.project-detail-hero').style.setProperty('--hero-bg', `url('${project.image}')`);
+      
+      // Update main content
+      document.getElementById('project-image').src = project.image;
+      document.getElementById('project-image').alt = project.title;
+      document.getElementById('project-heading').textContent = project.title;
+      document.getElementById('project-description').innerHTML = project.description.replace(/\n/g, '<br>');
+      
+      // Show blog article link if available
+      const blogLinkContainer = document.getElementById('blog-article-link');
+      const blogLinkBtn = document.getElementById('blog-article-btn');
+      if (project.blogArticle) {
+        blogLinkBtn.href = project.blogArticle;
+        blogLinkContainer.style.display = 'block';
+      } else {
+        blogLinkContainer.style.display = 'none';
+      }
+      
+      // Update page title
+      document.title = `${project.title} - מסגריית יונה לוי`;
+      
+      // Populate details
+      const detailsList = document.getElementById('project-details-list');
+      const detailsIcons = {
+        client: 'bi-building',
+        contractor: 'bi-hammer',
+        architect: 'bi-palette',
+        engineer: 'bi-gear',
+        supervision: 'bi-eye',
+        funding: 'bi-cash',
+        location: 'bi-geo-alt',
+        year: 'bi-calendar',
+        duration: 'bi-clock',
+        area: 'bi-arrows-fullscreen',
+        floors: 'bi-layers',
+        buildings: 'bi-houses'
+      };
+      const detailsLabels = {
+        client: 'מזמין',
+        contractor: 'קבלן',
+        architect: 'אדריכל',
+        engineer: 'מהנדס',
+        supervision: 'פיקוח',
+        funding: 'מימון',
+        location: 'מיקום',
+        year: 'שנה',
+        duration: 'משך',
+        area: 'שטח',
+        floors: 'קומות',
+        buildings: 'מבנים'
+      };
+      
+      detailsList.innerHTML = '';
+      for (const [key, value] of Object.entries(project.details)) {
+        detailsList.innerHTML += `
+          <div class="detail-item">
+            <i class="bi ${detailsIcons[key] || 'bi-info-circle'}"></i>
+            <span class="label">${detailsLabels[key] || key}:</span>
+            <span class="value">${value}</span>
+          </div>
+        `;
+      }
+      
+      // Populate features
+      const featuresList = document.getElementById('project-features-list');
+      featuresList.innerHTML = '';
+      project.features.forEach(feature => {
+        featuresList.innerHTML += `
+          <div class="feature-item">
+            <i class="bi bi-check-circle-fill"></i>
+            <span>${feature}</span>
+          </div>
+        `;
+      });
+      
+      // Populate stats
+      const statsContainer = document.getElementById('stats-container');
+      statsContainer.innerHTML = '';
+      project.stats.forEach(stat => {
+        statsContainer.innerHTML += `
+          <div class="col-6 col-md-3">
+            <div class="stat-item">
+              <div class="number">${stat.number}</div>
+              <div class="label">${stat.label}</div>
+            </div>
+          </div>
+        `;
+      });
+      
+      // Populate timeline
+      const timelineContainer = document.getElementById('timeline-container');
+      timelineContainer.innerHTML = '';
+      project.timeline.forEach((item, index) => {
+        timelineContainer.innerHTML += `
+          <div class="timeline-item">
+            <div class="timeline-content">
+              <h4>שלב ${index + 1}: ${item.phase}</h4>
+              <p>${item.description}</p>
+            </div>
+          </div>
+        `;
+      });
+      
+      // Populate gallery
+      const galleryContainer = document.getElementById('gallery-container');
+      galleryContainer.innerHTML = '';
+      if (project.gallery && project.gallery.length > 0) {
+        project.gallery.forEach((img, index) => {
+          galleryContainer.innerHTML += `
+            <div class="col-md-4 col-6">
+              <a href="${img}" class="gallery-item glightbox" data-gallery="project-gallery">
+                <img src="${img}" alt="${project.title} - תמונה ${index + 1}">
+              </a>
+            </div>
+          `;
+        });
+        // Initialize GLightbox for gallery
+        setTimeout(() => {
+          GLightbox({ selector: '.glightbox' });
+        }, 100);
+      } else {
+        document.getElementById('gallery-section').style.display = 'none';
+      }
+      
+      // Populate related projects
+      const relatedContainer = document.getElementById('related-projects-container');
+      relatedContainer.innerHTML = '';
+      const otherProjects = Object.entries(projectsData).filter(([key]) => key !== id).slice(0, 3);
+      otherProjects.forEach(([key, proj]) => {
+        relatedContainer.innerHTML += `
+          <div class="col-md-4 mb-4">
+            <a href="project-details.html?project=${key}" style="text-decoration: none;">
+              <div class="related-project-card">
+                <img src="${proj.image}" alt="${proj.title}">
+                <div class="card-body">
+                  <span class="badge bg-warning text-dark mb-2">${proj.category}</span>
+                  <h5>${proj.title}</h5>
+                  <p>${proj.subtitle.substring(0, 80)}...</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        `;
+      });
+    }
+    
+    // Load project on page load
+    if (projectId) {
+      loadProject(projectId);
+    } else {
+      // If no project specified, show first project
+      const firstProject = Object.keys(projectsData)[0];
+      loadProject(firstProject);
+    }
+    
+    // Load footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      });
+  </script>
+
+</body>
+</html>

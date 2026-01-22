@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>צור קשר - מסגריית יונה</title>
+  <meta name="description" content="צרו קשר עם מסגריית יונה לקבלת הצעת מחיר וייעוץ מקצועי">
+  <meta name="keywords" content="מסגריה, עבודות ברזל, צור קשר, הצעת מחיר">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.rtl.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    /* Interactive Form Styles */
+    .interactive-form {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+      border: 1px solid rgba(255,140,0,0.2);
+    }
+
+    .interactive-form h3 {
+      font-size: 1.6rem !important;
+      color: #1a1a1a !important;
+      margin-bottom: 10px;
+    }
+
+    .interactive-form h3 i {
+      color: #ff8c00;
+      margin-left: 8px;
+    }
+
+    .interactive-form p {
+      color: #333 !important;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .interactive-form .form-label {
+      color: #1a1a1a !important;
+      font-weight: 600;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .input-group-icon {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .input-group-icon i {
+      position: absolute;
+      right: 15px;
+      color: #ff8c00;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+      z-index: 2;
+    }
+
+    .input-group-icon input,
+    .input-group-icon textarea {
+      padding-right: 50px !important;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    .input-group-icon input:focus,
+    .input-group-icon textarea:focus {
+      border-color: #ff8c00;
+      box-shadow: 0 0 15px rgba(255,140,0,0.2);
+      transform: translateY(-2px);
+    }
+
+    .input-group-icon:focus-within i {
+      color: #ff4500;
+      transform: scale(1.2);
+    }
+
+    .textarea-group {
+      align-items: flex-start;
+    }
+
+    .textarea-group i {
+      top: 15px;
+    }
+
+    /* Service Selector */
+    .service-selector {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .service-option {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 10px;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .service-option i {
+      font-size: 1.8rem;
+      color: #555;
+      margin-bottom: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .service-option span {
+      font-size: 0.85rem;
+      color: #1a1a1a;
+      font-weight: 600;
+    }
+
+    .service-option:hover {
+      border-color: #ff8c00;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(255,140,0,0.2);
+    }
+
+    .service-option:hover i {
+      color: #ff8c00;
+      transform: scale(1.1);
+    }
+
+    .service-option.selected {
+      background: linear-gradient(135deg, #ff8c00 0%, #ff6600 100%);
+      border-color: #ff6600;
+      transform: translateY(-3px);
+      box-shadow: 0 5px 20px rgba(255,140,0,0.4);
+    }
+
+    .service-option.selected i,
+    .service-option.selected span {
+      color: #fff;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      background: linear-gradient(135deg, #ff8c00 0%, #ff6600 100%);
+      color: #fff;
+      border: none;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(255,140,0,0.4);
+    }
+
+    .submit-btn i {
+      margin-left: 8px;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 30px rgba(255,140,0,0.5);
+      background: linear-gradient(135deg, #ff6600 0%, #ff4500 100%);
+    }
+
+    .sent-message i {
+      color: #28a745;
+      margin-left: 8px;
+    }
+
+    /* Info boxes styling */
+    .info-item {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .info-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .info-item i {
+      font-size: 2.5rem;
+      color: #ff8c00;
+      margin-bottom: 15px;
+    }
+
+    .info-item h3 {
+      color: #1a1a1a;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .info-item p, .info-item a {
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .info-item a:hover {
+      color: #ff8c00;
+    }
+
+    .info-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .info-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .info-box i {
+      font-size: 2.5rem;
+      color: #ff8c00;
+      margin-bottom: 15px;
+    }
+
+    .info-box h3 {
+      color: #1a1a1a;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .info-box p, .info-box a {
+      color: #333;
+      font-size: 1rem;
+    }
+
+    .info-box a:hover {
+      color: #ff8c00;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .service-selector {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .interactive-form {
+        padding: 25px 20px;
+      }
+      
+      .interactive-form h3 {
+        font-size: 1.3rem !important;
+      }
+      
+      /* Fix color contrast on mobile */
+      .contact .info-item {
+        background: #fff !important;
+      }
+      
+      .contact .info-item h3 {
+        color: #1a1a1a !important;
+      }
+      
+      .contact .info-item p,
+      .contact .info-item a {
+        color: #333 !important;
+      }
+      
+      .contact .info-item i {
+        color: #ff8c00 !important;
+      }
+      
+      .contact-info .info-box {
+        background: #fff !important;
+      }
+      
+      .contact-info .info-box h3 {
+        color: #1a1a1a !important;
+      }
+      
+      .contact-info .info-box p,
+      .contact-info .info-box a {
+        color: #333 !important;
+      }
+      
+      .contact-info .info-box i {
+        color: #ff8c00 !important;
+      }
+      
+      /* Form colors on mobile */
+      .interactive-form h3,
+      .interactive-form .form-label {
+        color: #1a1a1a !important;
+      }
+      
+      .interactive-form p {
+        color: #333 !important;
+      }
+      
+      .service-option span {
+        color: #1a1a1a !important;
+      }
+      
+      .service-option i {
+        color: #555 !important;
+      }
+      
+      .service-option.selected span,
+      .service-option.selected i {
+        color: #fff !important;
+      }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1.2); }
+      50% { transform: translateY(-3px) scale(1.2); }
+    }
+  </style>
+</head>
+
+<body class="contact-page">
+
+  <!-- Header -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo_light.svg" alt="Light Logo" class="logo-default">
+        <img src="assets/img/logo_dark.svg" alt="Dark Logo" class="logo-scrolled">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">דף הבית</a></li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="index.html#projects">שירותים</a></li>
+          <li><a href="index.html#testimonials">פרויקטים</a></li>
+          <li><a href="blog.html">בלוג</a></li>
+          <li><a href="contact.html" class="active">צור קשר</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title dark-background" style="background-image: url(assets/img/page-title-bg.jpg);">
+      <div class="container position-relative">
+        <h1>צור קשר</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">דף הבית</a></li>
+            <li class="current">צור קשר</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="bi bi-geo-alt"></i>
+              <h3>כתובת</h3>
+              <p>רחוב המרכבה 18, חולון</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="bi bi-telephone"></i>
+              <h3>טלפון</h3>
+              <p><a href="tel:0542666568">054-266-6568</a></p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="info-item d-flex flex-column justify-content-center align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="bi bi-envelope"></i>
+              <h3>אימייל</h3>
+              <p><a href="mailto:0542666568vc@gmail.com">0542666568vc@gmail.com</a></p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="row gy-4 mt-1">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3382.2047476377556!2d34.76944141515962!3d32.01117238119561!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151d4b7a0e1d4d4f%3A0x0!2zMzLCsDAwJzQwLjIiTiAzNMKwNDYnMTkuMCJF!5e0!3m2!1siw!2sil!4v1643000000000!5m2!1siw!2sil" frameborder="0" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div><!-- End Google Maps -->
+
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form interactive-form" data-aos="fade-up" data-aos-delay="400">
+              <h3><i class="bi bi-envelope-paper-heart"></i> שלחו לנו הודעה</h3>
+              <p>מלאו את הפרטים ונחזור אליכם בהקדם</p>
+              <div class="row gy-4">
+
+                <div class="col-md-6">
+                  <div class="input-group-icon">
+                    <i class="bi bi-person-fill"></i>
+                    <input type="text" name="name" class="form-control" placeholder="שם מלא" required="">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="input-group-icon">
+                    <i class="bi bi-envelope-fill"></i>
+                    <input type="email" class="form-control" name="email" placeholder="כתובת אימייל" required="">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="input-group-icon">
+                    <i class="bi bi-telephone-fill"></i>
+                    <input type="text" class="form-control" name="phone" placeholder="מספר טלפון" required="">
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="input-group-icon">
+                    <i class="bi bi-tag-fill"></i>
+                    <input type="text" class="form-control" name="subject" placeholder="נושא הפנייה" required="">
+                  </div>
+                </div>
+
+                <div class="col-md-12">
+                  <label class="form-label">
+                    <i class="bi bi-gear-wide-connected"></i> סוג השירות המבוקש
+                  </label>
+                  <div class="service-selector">
+                    <div class="service-option" data-value="שערים וגדרות">
+                      <i class="bi bi-door-closed"></i>
+                      <span>שערים וגדרות</span>
+                    </div>
+                    <div class="service-option" data-value="פרגולות ומעקות">
+                      <i class="bi bi-house"></i>
+                      <span>פרגולות ומעקות</span>
+                    </div>
+                    <div class="service-option" data-value="מבנים ומתקנים">
+                      <i class="bi bi-building"></i>
+                      <span>מבנים ומתקנים</span>
+                    </div>
+                    <div class="service-option" data-value="מדרגות וסולמות">
+                      <i class="bi bi-ladder"></i>
+                      <span>מדרגות וסולמות</span>
+                    </div>
+                    <div class="service-option" data-value="ריהוט מתכת">
+                      <i class="bi bi-box-seam"></i>
+                      <span>ריהוט מתכת</span>
+                    </div>
+                    <div class="service-option" data-value="אחר">
+                      <i class="bi bi-three-dots"></i>
+                      <span>אחר</span>
+                    </div>
+                  </div>
+                  <input type="hidden" name="service_type" id="service_type_contact" value="">
+                </div>
+
+                <div class="col-md-12">
+                  <div class="input-group-icon textarea-group">
+                    <i class="bi bi-chat-dots-fill"></i>
+                    <textarea class="form-control" name="message" rows="5" placeholder="תוכן ההודעה..." required=""></textarea>
+                  </div>
+                </div>
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">טוען...</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message"><i class="bi bi-check-circle-fill"></i> ההודעה נשלחה בהצלחה. תודה שפניתם אלינו!</div>
+
+                  <button type="submit" class="submit-btn">
+                    <i class="bi bi-send-fill"></i> שלח הודעה
+                  </button>
+                </div>
+
+              </div>
+            </form>
+          </div><!-- End Contact Form -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+    <!-- Additional Contact Info -->
+    <section id="contact-info" class="contact-info section light-background">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4 justify-content-center">
+          <div class="col-lg-4 col-md-6">
+            <div class="info-box text-center">
+              <i class="bi bi-clock"></i>
+              <h3>שעות פעילות</h3>
+              <p>ראשון - חמישי: 08:00 - 18:00<br>שישי: 08:00 - 13:00</p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="info-box text-center">
+              <i class="bi bi-whatsapp"></i>
+              <h3>וואטסאפ</h3>
+              <p><a href="https://wa.me/972542666568">לחצו כאן לשליחת הודעה</a></p>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="info-box text-center">
+              <i class="bi bi-phone"></i>
+              <h3>חירום</h3>
+              <p>זמינים גם מחוץ לשעות הפעילות<br>לפניות דחופות</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <img src="assets/img/gear.svg" alt="Loading Gear" style="width: 80px; height: 80px; animation: rotate-gear 1.5s linear infinite;">
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <!-- Component Loader -->
+  <script src="assets/js/loadComponents.js"></script>
+
+  <!-- Interactive Form Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Service selector
+      const serviceOptions = document.querySelectorAll('.service-option');
+      const serviceInput = document.getElementById('service_type_contact');
+      
+      serviceOptions.forEach(option => {
+        option.addEventListener('click', function() {
+          serviceOptions.forEach(opt => opt.classList.remove('selected'));
+          this.classList.add('selected');
+          if (serviceInput) serviceInput.value = this.dataset.value;
+          
+          // Add bounce animation
+          this.style.animation = 'bounce 0.3s ease';
+          setTimeout(() => this.style.animation = '', 300);
+        });
+      });
+
+      // Add floating animation to icons on focus
+      const inputGroups = document.querySelectorAll('.input-group-icon');
+      inputGroups.forEach(group => {
+        const input = group.querySelector('input, textarea');
+        const icon = group.querySelector('i');
+        
+        if (input && icon) {
+          input.addEventListener('focus', () => {
+            icon.style.animation = 'float 1s ease-in-out infinite';
+          });
+          input.addEventListener('blur', () => {
+            icon.style.animation = '';
+          });
+        }
+      });
+    });
+  </script>
+  
+  <!-- Enhanced Functionality -->
+  <script src="assets/js/enhancements.js"></script>
+
+</body>
+
+</html>
